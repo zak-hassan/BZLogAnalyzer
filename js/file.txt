@@ -1,0 +1,104 @@
+
+uistructure.js
+ #1 Expected '===' and instead saw '=='.
+    return (this.getPageNum() == 1); // Line 47, Pos 35
+ #2 Unexpected space between '}' and ','.
+    } , // Line 48, Pos 7
+ #3 Expected 'return' at column 9, not column 17.
+    return (this.getPageNum() == this.getTotalPages()); // Line 50, Pos 17
+ #4 Expected '===' and instead saw '=='.
+    return (this.getPageNum() == this.getTotalPages()); // Line 50, Pos 43
+ #5 Expected 'return' at column 9, not column 11.
+    return (Number($("#page a")[0].innerHTML) == this.getPageNum()); // Line 53, Pos 11
+ #6 '$' was used before it was defined.
+    return (Number($("#page a")[0].innerHTML) == this.getPageNum()); // Line 53, Pos 26
+ #7 Expected '===' and instead saw '=='.
+    return (Number($("#page a")[0].innerHTML) == this.getPageNum()); // Line 53, Pos 53
+ #8 '$' was used before it was defined.
+    return (Number($("#page a")[$("#page a").length-1].innerHTML) == this.getPageNum()); // Line 56, Pos 24
+ #9 Missing space between 'length' and '-'.
+    return (Number($("#page a")[$("#page a").length-1].innerHTML) == this.getPageNum()); // Line 56, Pos 56
+#10 Missing space between '-' and '1'.
+    return (Number($("#page a")[$("#page a").length-1].innerHTML) == this.getPageNum()); // Line 56, Pos 57
+#11 Expected '===' and instead saw '=='.
+    return (Number($("#page a")[$("#page a").length-1].innerHTML) == this.getPageNum()); // Line 56, Pos 71
+#12 Expected 'isMin' at column 5, not column 8.
+    }, isMin:function(){ // Line 57, Pos 8
+#13 Missing space between ':' and 'function'.
+    }, isMin:function(){ // Line 57, Pos 14
+#14 Expected exactly one space between 'function' and '('.
+    }, isMin:function(){ // Line 57, Pos 22
+#15 Expected exactly one space between ')' and '{'.
+    }, isMin:function(){ // Line 57, Pos 24
+#16 Missing space between ')' and '{'.
+    }, isMin:function(){ // Line 57, Pos 24
+#17 Expected 'return' at column 9, not column 15.
+    return (Number($("#page a")[0].innerHTML) ==1); // Line 58, Pos 15
+#18 '$' was used before it was defined.
+    return (Number($("#page a")[0].innerHTML) ==1); // Line 58, Pos 30
+#19 Missing space between '==' and '1'.
+    return (Number($("#page a")[0].innerHTML) ==1); // Line 58, Pos 59
+#20 Expected '===' and instead saw '=='.
+    return (Number($("#page a")[0].innerHTML) ==1); // Line 58, Pos 57
+#21 Expected 'isMax' at column 5, not column 8.
+    }, isMax:function(){ // Line 59, Pos 8
+#22 Missing space between ':' and 'function'.
+    }, isMax:function(){ // Line 59, Pos 14
+#23 Expected exactly one space between 'function' and '('.
+    }, isMax:function(){ // Line 59, Pos 22
+#24 Expected exactly one space between ')' and '{'.
+    }, isMax:function(){ // Line 59, Pos 24
+#25 Missing space between ')' and '{'.
+    }, isMax:function(){ // Line 59, Pos 24
+#26 Expected 'return' at column 9, not column 15.
+    return (Number($("#page a")[$("#page a").length-1].innerHTML) ==this.getTotalPages()); // Line 60, Pos 15
+#27 '$' was used before it was defined.
+    return (Number($("#page a")[$("#page a").length-1].innerHTML) ==this.getTotalPages()); // Line 60, Pos 30
+#28 Missing space between 'length' and '-'.
+    return (Number($("#page a")[$("#page a").length-1].innerHTML) ==this.getTotalPages()); // Line 60, Pos 62
+#29 Missing space between '-' and '1'.
+    return (Number($("#page a")[$("#page a").length-1].innerHTML) ==this.getTotalPages()); // Line 60, Pos 63
+#30 Missing space between '==' and 'this'.
+    return (Number($("#page a")[$("#page a").length-1].innerHTML) ==this.getTotalPages()); // Line 60, Pos 79
+#31 Expected '===' and instead saw '=='.
+    return (Number($("#page a")[$("#page a").length-1].innerHTML) ==this.getTotalPages()); // Line 60, Pos 77
+#32 Expected 'getPos' at column 5, not column 8.
+    }, getPos:function(num){ // Line 61, Pos 8
+#33 Missing space between ':' and 'function'.
+    }, getPos:function(num){ // Line 61, Pos 15
+#34 Expected exactly one space between 'function' and '('.
+    }, getPos:function(num){ // Line 61, Pos 23
+#35 Expected exactly one space between ')' and '{'.
+    }, getPos:function(num){ // Line 61, Pos 28
+#36 Missing space between ')' and '{'.
+    }, getPos:function(num){ // Line 61, Pos 28
+#37 Expected 'return' at column 9, not column 15.
+    return ((num%10)==0)? 10:(num%10); // Line 62, Pos 15
+#38 Missing space between 'num' and '%'.
+    return ((num%10)==0)? 10:(num%10); // Line 62, Pos 27
+#39 Missing space between '%' and '10'.
+    return ((num%10)==0)? 10:(num%10); // Line 62, Pos 28
+#40 Missing space between ')' and '=='.
+    return ((num%10)==0)? 10:(num%10); // Line 62, Pos 31
+#41 Missing space between '==' and '(number)'.
+    return ((num%10)==0)? 10:(num%10); // Line 62, Pos 33
+#42 Expected '===' and instead saw '=='.
+    return ((num%10)==0)? 10:(num%10); // Line 62, Pos 31
+#43 Missing space between ')' and '?'.
+    return ((num%10)==0)? 10:(num%10); // Line 62, Pos 35
+#44 Missing space between '10' and ':'.
+    return ((num%10)==0)? 10:(num%10); // Line 62, Pos 39
+#45 Missing space between ':' and '('.
+    return ((num%10)==0)? 10:(num%10); // Line 62, Pos 40
+#46 Missing space between 'num' and '%'.
+    return ((num%10)==0)? 10:(num%10); // Line 62, Pos 44
+#47 Missing space between '%' and '10'.
+    return ((num%10)==0)? 10:(num%10); // Line 62, Pos 45
+#48 Expected 'setupNav' at column 5, not column 8.
+    }, setupNav:function(){ // Line 63, Pos 8
+#49 Missing space between ':' and 'function'.
+    }, setupNav:function(){ // Line 63, Pos 17
+#50 Expected exactly one space between 'function' and '('.
+    }, setupNav:function(){ // Line 63, Pos 25
+#51 Too many errors. (11% scanned).
+     // Line 63, Pos 25

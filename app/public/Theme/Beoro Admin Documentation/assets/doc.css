@@ -1,0 +1,55 @@
+body {padding-top:10px;font-size:13px;line-height:1.4}
+
+.toc-container { width: 16%; position: fixed; top: 0; background: #333; height: 100%; overflow-y: auto;}
+#toc {border-top:1px solid #222;-webkit-box-shadow: inset 0  1px 0 #444;-moz-box-shadow: inset 0  1px 0 #444;box-shadow: inset 0  1px 0 #444}
+#toc ul,
+#toc li { list-style: none; margin: 0; padding: 0; border: none; line-height: 30px; }
+.header { text-transform:uppercase;font-size:12px }
+.sub-header { display: none;text-transform:none }
+.sub-header li { font-size: 12px }
+.nav-list > li > a,
+.nav-list .nav-header { margin: 0px; color: #fff; text-shadow: none;border-bottom:1px solid #222;-webkit-box-shadow: 0 1px 0 #444;-moz-box-shadow: 0 1px 0 #444;box-shadow: 0 1px 0 #444}
+.nav-list > li > a:hover { background: #222 }
+.nav-list > .active > a,
+.nav-list > .active > a:hover { background: #208BBD }
+.nav-list > li > a { padding: 10px; line-height:18px}
+.nav-list .sub-header a { padding-left:20px}
+
+h1,h2,h3,h4 {font-family: "Open Sans Condensed";font-weight:300;margin-bottom:10px}
+
+.beoro_logo {display:block;margin:10px auto 20px}
+
+.doc-header {margin-bottom:20px}
+.doc-header p {margin:0 0 2px}
+.doc-header .alert {margin-top:20px}
+.doc-subitem {padding-left:20px}
+.element-name {font-family: "Open Sans Condensed";font-weight:300;margin:0;line-height:32px;height:32px;margin-top:20px}
+.element-name span {font-size:18px;text-transform:uppercase;padding:0 10px;border-width:1px 1px 0;border-style:dashed;border-color:#ddd;display:inline-block;position:relative;top:-2px;background:#fff;border-top:3px solid #368CA9}
+.element-desc {padding:10px 15px;border:1px dashed #ddd}
+.element-desc em {display:block;margin-bottom:10px}
+
+.com { color: #93a1a1 }
+.lit { color: #195f91 }
+.pun,.opn,.clo { color: #93a1a1 }
+.fun { color: #dc322f }
+.str,.atv { color: #D14 }
+.kwd,.prettyprint .tag { color: #1e347b }
+.typ,.atn,.dec,.var { color: teal }
+.pln { color: #48484c }
+.prettyprint { padding: 8px; background-color: #f7f7f9; border: 1px solid #e1e1e8; }
+.prettyprint.linenums { -webkit-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0; -moz-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0; box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0; }
+ol.linenums { margin: 0 0 0 33px; /* IE indents via margin-left */ }
+ol.linenums li { padding-left: 12px; color: #bebec5; line-height: 20px; text-shadow: 0 1px 0 #fff; }
+
+hr {border-width:4px 0 0}
+
+.ext_link {display:inline-block;padding-right:16px;background: url(ext_link.png) no-repeat right 3px}
+.btn img {padding-left:5px;vertical-align:0}
+
+@media (max-width: 767px) {
+    .toc-container {
+        position: relative;
+        width: 100%;
+        margin: 0px 0px 20px 0px;
+    }
+}

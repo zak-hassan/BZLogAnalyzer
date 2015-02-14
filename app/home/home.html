@@ -1,8 +1,8 @@
 <div class="container" id="bodyWrapper" style="background:white;margin-bottom:100px">
 
     <style type="text/css" rel="stylesheet">
-        #bod{
-            background:white;
+        #bod {
+            background: white;
         }
     </style>
     <!-- START OF ADS-->
@@ -58,7 +58,8 @@
                             </div>
 
                             <input name="local" style="width:80%" id="location" type="text"
-                                   onfocus="myAutoComplete('CA')" ng-model="location" value="" oninput="myAutoComplete('US')" class="text">
+                                   onfocus="myAutoComplete('CA')" ng-model="location" value=""
+                                   oninput="myAutoComplete('US')" class="text">
                             <span class="help-block"> (city, province or town)</span>
                         </div>
 
@@ -68,8 +69,9 @@
                     <div class="span1">
 
                         <div class="submit_sect">
-                            <input style="width:120px;margin:30px 0px" id="searchbtn" class="btn btn-beoro-3 btn-large" ng-click="fetchSearch()"
-                                    value="Find Jobs"/>
+                            <input style="width:120px;margin:30px 0px" id="searchbtn" class="btn btn-beoro-3 btn-large"
+                                   ng-click="fetchSearch()"
+                                   value="Find Jobs"/>
                         </div>
                     </div>
                 </div>
@@ -178,13 +180,13 @@
             <h2 style="font-size:18px;"> Announcements
                 <hr>
             </h2>
-            <p class="info-box" style="font-size:13px;"> BZCareer Console <a href="/analytics/">Available Now</a>
-                <br/>
-                <br/>
-                <span style="font-weight: 900;">What is BZCareer Console?</span> <br/><br/>Recruiters can post jobs with
-                us and we will design the job post for mobile, and integrate their job opening with LinkedIn. Allowing
-                the recruiter to find applicants not only in there social network but applicants who are outside there
-                social circle.</p>
+            <p class="info-box" style="font-size:13px;">
+                <span style="font-weight: 900;">What is BZCareer Search?</span> <br/><br/>We
+                provide an advanced search engine to help you find the ideal career. When searching for the ideal career, it
+                may be time consuming but with our search engine you can find the ideal career in seconds. Our searches
+                are fresh and updated frequently. With BZCareer, what you see in our results is exactly what is
+                available in the job market.
+            </p>
         </div>
     </div>
     <div class="clearfix"></div>
@@ -239,7 +241,6 @@
             window.location.replace('http://' + location.host + "/{{prefix }}search?keyword=" + encodeURIComponent(role) + "&local=" + encodeURIComponent(local));
         }
     });
-
 
 
     function enter() {
@@ -308,8 +309,6 @@
             $("#social-list").addClass("inline");
         }
     }
-
-
 
 
 </script>

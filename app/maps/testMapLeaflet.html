@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+</head>
+<body>
+
+<style type="text/css">
+    #map {
+        width: 600px;
+        height: 600px;
+    }
+</style>
+
+
+<div id="map"></div>
+
+<script type="text/javascript">
+    (function(){
+        // Provide your access token
+        map = new L.Map('map');
+
+        var circle = L.circle([43.7067611, -79.3983083], 50, {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5
+        }).addTo(map);
+
+        var marker = L.marker([43.7075863, -79.3957828]).addTo(map);
+        var marker2 = L.marker([43.7067034, -79.3993303]).addTo(map);
+        var marker2 = L.marker([43.7067034, -79.3933303]).addTo(map);
+        marker.bindPopup("<b>Red Hat</b><br>90 Eglington Avenue").openPopup();
+        marker2.bindPopup("<b>Bell</b><br>70 Eglington Avenue").openPopup();
+
+        // create the tile layer with correct attribution
+        var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+        var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 20, attribution: osmAttrib});
+
+        // start the map in South-East England
+        map.setView(new L.LatLng(43.7075863, -79.3957828),15);
+        map.addLayer(osm);
+    }())
+
+</script>
+
+
+</body>
+</html>

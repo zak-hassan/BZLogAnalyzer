@@ -18,177 +18,12 @@
             src="//pagead2.googlesyndication.com/pagead/show_ads.js">
     </script>
 
-    <!-- END OF LINE -->
-    <div id="searchField" class="sixteen columns" style="margin: 0 auto;">
-        <div class="" style="background: white;padding: 20px;">
-            <ul class="inline">
-                <li>
-                    <img src="/app/images/RealLogo/jpeg/LogoColorTextBelow.jpeg"
-                         alt="Canada job search. Jobs search. Canadian Jobs. Job search engine."
-                            /></li>
-                <li><h2>{{country }} </h2></li>
-            </ul>
-            <h6>One Stop Job Search</h6>
-
-            <br/>
-            <br/>
-
-            <div id="searchBox">
-                <div class="row">
-                    <div class="span4">
-                        <div id="lblrole">
-                            <h3 style="color:#23406f"> What? </h3>
-                            <input name="keyword" ng-model="role" onchange="myKeyword()" oninput="myKeyword()" id="role"
-                                   style="margin:10;padding:10;width:300;" type="text" class="text span4"/>
-
-                            <span class="help-block">(job title or job keyword)</span>
-                        </div>
-                    </div>
-                    <div class="span4 ui-widget">
+    <bzsearchbox></bzsearchbox>
+    <bzfeaturebox1></bzfeaturebox1>
+    <bzfeaturebox2></bzfeaturebox2>
+    <bzfeaturebox3></bzfeaturebox3>
 
 
-                        <div id="lblLocation">
-                            <div class="dropdown">
-                                <table>
-                                    <tr>
-                                        <td><h3 style="color:#23406f"> Where in&nbsp;</h3></td>
-                                        <td><h3 style="color:#23406f" id="country">{{ country }}?&nbsp;</h3></td>
-                                    </tr>
-                                </table>
-                            </div>
-
-                            <input name="local" style="width:80%" id="location" type="text"
-                                   onfocus="myAutoComplete('CA')" ng-model="location" value=""
-                                   oninput="myAutoComplete('US')" class="text">
-                            <span class="help-block"> (city, province or town)</span>
-                        </div>
-
-                        <div id="selction-ajax"></div>
-
-                    </div>
-                    <div class="span1">
-
-                        <div class="submit_sect">
-                            <input style="width:120px;margin:30px 0px" id="searchbtn" class="btn btn-beoro-3 btn-large"
-                                   ng-click="fetchSearch()"
-                                   value="Find Jobs"/>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="feature one-third column">
-        <div class="feature-circle gray"><img src="/app/images/features_ico_02.png" alt="search for a job"/></div>
-        <div class="feature-description">
-
-            <h2 style="font-size:18px"> Searching For A Job
-                <hr>
-            </h2>
-            <p class="info-box">
-                BZCareer is a job search engine that provides the most recent available jobs and careers on the market.
-                Our search engine is designed to provide a service to enable people to find job openings in real time
-                with our state of the art search engine. Our searches are fresh and updated frequently. With BZCareer,
-                what you see in our results is exactly what is available in the job market.
-
-            </p>
-        </div>
-    </div>
-    <div class="feature one-third column">
-        <div class="feature-circle blue"><img src="/app/images/features_ico_04.png" alt="popular job searchs"/></div>
-        <div class="feature-description" style="line-height: 26px;">
-            <h2 style="font-size:18px;"> Popular Job Searches
-                <hr>
-            </h2>
-            <ul class="inline info-box">
-                <li>
-                    <a href="http://www.bzcareer.com/search?keyword=Software%20Engineer&local=">
-                        Software Engineer</a>,
-                </li>
-                <li>
-                    <a href="http://www.bzcareer.com/search?keyword=Web%20Developer&local=">
-                        Web Developer</a>,
-                </li>
-                <li>
-                    <a href="http://www.bzcareer.com/search?keyword=IT&local=">
-                        IT</a>,
-                </li>
-                <li>
-                    <a href="http://www.bzcareer.com/search?keyword=Management&local=">
-                        Management</a>,
-                </li>
-                <li>
-                    <a href="http://www.bzcareer.com/search?keyword=Intern&local=">
-                        Intern</a>,
-                </li>
-                <li>
-                    <a href="http://www.bzcareer.com/search?keyword=Healthcare&local=">
-                        Healthcare</a>,
-                </li>
-                <li>
-                    <a href="http://www.bzcareer.com/search?keyword=Supply%20Chain&local=">
-                        Supply Chain</a>,
-                </li>
-                <li>
-                    <a href="http://www.bzcareer.com/search?keyword=Retail&local=">
-                        Retail</a>,
-                </li>
-                <li>
-                    <a href="http://www.bzcareer.com/search?keyword=Call%20Center&local=">
-                        Call Center</a>,
-                </li>
-                <li>
-                    <a href="http://www.bzcareer.com/search?keyword=Customer%20Service&local=">
-                        Customer Service</a>,
-                </li>
-                <li>
-                    <a href="http://www.bzcareer.com/search?keyword=Human%20Resources&local=">
-                        Human Resources</a>,
-                </li>
-                <li>
-                    <a href="http://www.bzcareer.com/search?keyword=Accountant&local=">
-                        Accountant</a>,
-                </li>
-                <li>
-                    <a href="http://www.bzcareer.com/search?keyword=Business%20Analyst&local=">
-                        Business Analyst</a>,
-                </li>
-                <li>
-                    <a href="http://www.bzcareer.com/search?keyword=Civil%20Engineer&local=">
-                        Civil Engineer</a>,
-                </li>
-                <li>
-                    <a href="http://www.bzcareer.com/search?keyword=Sales%20Associate&local=">
-                        Sales Associate</a>,
-                </li>
-                <li>
-                    <a href="http://www.bzcareer.com/search?keyword=Financial%20Services&local=">
-                        Financial Services</a>,
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- POPULAR LINKS -->
-    <div class="feature one-third column">
-        <div class="feature-circle gray"><img src="/app/images/features_ico_05.png" alt="Announcements"/></div>
-        <div class="feature-description">
-            <h2 style="font-size:18px;"> Announcements
-                <hr>
-            </h2>
-            <p class="info-box" style="font-size:13px;">
-                <span style="font-weight: 900;">What is BZCareer Search?</span> <br/><br/>We
-                provide an advanced search engine to help you find the ideal career. When searching for the ideal career, it
-                may be time consuming but with our search engine you can find the ideal career in seconds. Our searches
-                are fresh and updated frequently. With BZCareer, what you see in our results is exactly what is
-                available in the job market.
-            </p>
-        </div>
-    </div>
     <div class="clearfix"></div>
 
 
@@ -196,8 +31,6 @@
 
     </div>
 </div>
-<link href="//ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/themes/redmond/jquery-ui.css" rel="stylesheet" type="text/css"/>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script defer="defer" type="text/javascript">
     window.onload = function () {
         var mycode;

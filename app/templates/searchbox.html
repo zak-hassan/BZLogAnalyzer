@@ -1,0 +1,62 @@
+<div id="searchField" class="sixteen columns" style="margin: 0 auto;">
+    <div class="" style="background: white;padding: 20px;">
+        <ul class="inline">
+            <li>
+                <img src="/app/images/RealLogo/jpeg/LogoColorTextBelow.jpeg"
+                     alt="Canada job search. Jobs search. Canadian Jobs. Job search engine."
+                        /></li>
+            <li><h2>{{country }} </h2></li>
+        </ul>
+        <h6>One Stop Job Search</h6>
+
+        <br/>
+        <br/>
+
+        <div id="searchBox">
+            <div class="row">
+                <div class="span4">
+                    <div id="lblrole">
+                        <h3 style="color:#23406f"> What? </h3>
+                        <input name="keyword" ng-model="role" onchange="myKeyword()" oninput="myKeyword()" id="role"
+                               style="margin:10;padding:10;width:300;" type="text" class="text span4"/>
+
+                        <span class="help-block">(job title or job keyword)</span>
+                    </div>
+                </div>
+                <div class="span4 ui-widget">
+
+
+                    <div id="lblLocation">
+                        <div class="dropdown">
+                            <table>
+                                <tr>
+                                    <td><h3 style="color:#23406f"> Where in&nbsp;</h3></td>
+                                    <td><h3 style="color:#23406f" id="country">{{ country }}?&nbsp;</h3></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <input name="local" style="width:80%" id="location" type="text"
+                               onfocus="myAutoComplete('CA')" ng-model="location" value=""
+                               oninput="myAutoComplete('US')" class="text">
+                        <span class="help-block"> (city, province or town)</span>
+                    </div>
+
+                    <div id="selction-ajax"></div>
+
+                </div>
+                <div class="span1">
+
+                    <div class="submit_sect">
+                        <input style="width:120px;margin:30px 0px" id="searchbtn" class="btn btn-beoro-3 btn-large"
+                               ng-click="fetchSearch()"
+                               value="Find Jobs"/>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

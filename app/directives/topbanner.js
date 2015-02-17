@@ -1,6 +1,6 @@
 (function () {
 
-    var app = angular.module("myApp.directive.contactForm", [])
+    var app = angular.module("myApp.directive.topBanner", [])
         .directive('topBanner', function () {
             return {
                 templateUrl: "templates/topbanner.html",

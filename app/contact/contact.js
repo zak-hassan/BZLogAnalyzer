@@ -2,7 +2,7 @@
 (function () {
 
 
-angular.module('myApp.contact', ['ngRoute'])
+angular.module('myApp.contact', ['ngRoute','myApp.directive.contactForm','myApp.directive.topBanner'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/contact', {

@@ -220,7 +220,7 @@ function hidePaginationPrevNext() {
     }
 }
 
-//TODO: Create Sidebar directive and use ng-repeat
+//TODO: Create Sidebar directive and use ng-repeat ..
 var generateSideBar = function (obj, flag, tag) {
     var sidebar = [], list = "";
     $.each(obj, function (j, v) {
@@ -258,8 +258,12 @@ var removeFilter = function () {
     }
 }
 
+
+
+// TODO: Need to stop using global variables and use $scope instead for stuff like this 'obj'?
 var obj;
 
+// TODO: Move this code to datacontext service and
 function fetchResults(col, companyFilter) {
     var parm = "isLocal=" + encodeURIComponent($("#location").val().trim()) + "&country=" + encodeURIComponent("<%-prefix.substr(0,2) %>");
     var r;

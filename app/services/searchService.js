@@ -583,7 +583,7 @@ function generateJPost(jID, jTitle, jLocation, jDate, jobApplyLink, jobDetailLin
     return div;
 
 }
-//TODO: Create a Directive for generate more button
+//TODO: Create a Directive for generate more button . Finished Creating the directive and now need to test it! search.js
 var generateMoreButton = function (company, loc, flag) {
     var btn = "";
     if (flag) {

@@ -247,6 +247,7 @@ var generateSideBar = function (obj, flag, tag) {
         return list;
     }
 };
+
 var displayMoreSideBar = function () {
     $("#CompanySBList").empty();
     $("#CompanySBList").append(generateSideBar(obj, true, 'company'));
@@ -256,9 +257,7 @@ var removeFilter = function () {
     if (ajaxQstr.getKeyValPair().keyword.split(";").length > 1) {
         window.location.replace(location.pathname + "?keyword=" + ajaxQstr.getKeyValPair().keyword.split(";")[0] + "&local=" + ajaxQstr.getKeyValPair().local);
     }
-}
-
-
+};
 
 // TODO: Need to stop using global variables and use $scope instead for stuff like this 'obj'?
 var obj;
@@ -531,21 +530,8 @@ function bookmark(title, url) {
 }
 
 
-function getJobSummary(jID, jTitle, company) {
-    var url = "https://54.235.212.123/ajaxjobsummary.php?company=" + company + "&id=" + jID + "&title=" + jTitle;
-    var info;
-    $.ajax({
-        url: url,
-        type: "GET",
-        dataType: "jsonp",
-        jsonpCallback: "_testcb",
-        success: function (data) {
-            info = data;
-        }
-    });
-    return JSON.stringify(info);
-}
 
+// TODO: Turn this into a directive that will take the following inputs ...
 function generateJPost(jID, jTitle, jLocation, jDate, jobApplyLink, jobDetailLink, company, companyName, JobSummary) {
 
     //NOTE: jID will be used to construct the job apply button...
@@ -597,6 +583,7 @@ function generateJPost(jID, jTitle, jLocation, jDate, jobApplyLink, jobDetailLin
     return div;
 
 }
+//TODO: Create a Directive for generate more button
 var generateMoreButton = function (company, loc, flag) {
     var btn = "";
     if (flag) {
@@ -608,12 +595,12 @@ var generateMoreButton = function (company, loc, flag) {
     return btn;
 }
 
-
+// TODO: Move this code to the datacontext as a method to invoke
 var filterByCompany = function (company) {
     fetchResults(1, company);
 }
 
-
+// TODO: I don't know why this code is here frankly
 (function () {
     if (location.pathname == "/search") {
         location.replace(location.origin + "/CA" + location.pathname + location.search);

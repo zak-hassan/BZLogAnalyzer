@@ -13,6 +13,18 @@
           templateUrl: 'search/search.html',
           controller: 'SearchCtrl'
         });
-      }]).controller('SearchCtrl', SearchCtrl);
+      }]).controller('SearchCtrl', SearchCtrl)
+      .directive('searchmorebutton',function(){
+        return {
+          templateUrl: "templates/SearchMoreButton.html",
+          restrict: "E",
+          scope:{
+            company : "=",
+            loc: "="
+          },
+          replace: true
+        };
+
+      });
 
 }())

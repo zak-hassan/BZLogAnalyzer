@@ -25,6 +25,18 @@
           replace: true
         };
 
-      });
+      })
+      .directive('socialmedia',function(){
+          return {
+            templateUrl: "templates/socialmediabuttons.html",
+            restrict: "E",
+            scope:{
+              company : "=",
+              loc: "="
+            },
+            replace: true
+          };
+
+  });
 
 }())

@@ -1,4 +1,6 @@
 'use strict';
+(function () {
+
 
 angular.module('myApp.contact', ['ngRoute'])
 
@@ -8,7 +10,8 @@ angular.module('myApp.contact', ['ngRoute'])
     controller: 'ContactCtrl'
   });
 }])
-
 .controller('ContactCtrl', [function() {
 
 }]);
+
+}());

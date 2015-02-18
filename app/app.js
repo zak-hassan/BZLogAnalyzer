@@ -8,7 +8,8 @@ angular.module('myApp', [
   'myApp.contact',
   'myApp.about',
   'myApp.maps',
-  'myApp.service'
+  'myApp.service',
+    'ui.bootstrap'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/'});

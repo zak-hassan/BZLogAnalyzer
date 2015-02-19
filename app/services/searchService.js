@@ -1,4 +1,4 @@
-
+//TODO: Remove this service because you are going to have to break up the services into single operations.
 (function(){
 
  var app = angular.module("myApp.service",[]);

@@ -8,7 +8,7 @@
  * ******************************************************/
 (function(){
 
-    var app = angular.module("myApp.service",[]);
+    var app = angular.module("myApp.service.PaginQueue",[]);
     app.factory("PaginQueue",[function(){
 
         return {

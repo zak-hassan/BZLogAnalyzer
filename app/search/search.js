@@ -2,12 +2,20 @@
 
 (function(){
 
-  var SearchCtrl=function($scope){
+  var SearchCtrl=function($scope, PaginQueue){
     $scope.country="Canada";
     $scope.sidebar="";
 
+
+      $scope.next = function () {
+          PaginQueue.pagin_next();
+      }
+      $scope.prev = function () {
+          PaginQueue.pagin_prev();
+      }
+
   };
-  angular.module('myApp.search', ['ngRoute'])
+  angular.module('myApp.search', ['ngRoute', 'myApp.service.PaginQueue'])
       .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/search', {
           templateUrl: 'search/search.html',

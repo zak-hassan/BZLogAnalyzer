@@ -188,16 +188,7 @@ $(document).ready(function () {
 
     }
 
-    $("#searchbtn").click(function () {
-        var role, local;
-        role = $("#role").val(); //.replace(" ","%20");
-        local = $("#location").val();
-        if (role.trim().length == 0 && local.trim().length == 0) {
-            $("#err").modal('show'); // TODO: Create Angular Modal Service to popup dialogs with custom messages.
-        } else {
-            window.location.replace('http://' + location.host + "/<%-prefix %>search?keyword=" + encodeURIComponent(role) + "&local=" + encodeURIComponent(local));
-        }
-    });
+    $("#searchbtn").click();
     $("#page").css({
         "padding-bottom": "90px"
     });

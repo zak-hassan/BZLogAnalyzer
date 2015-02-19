@@ -55,7 +55,7 @@
                                     <div class="row">
                                         <input style="width:120px;margin:45px 20px" type="submit" id="searchbtn"
                                                class="btn btn-beoro-3 btn-large" value="Find Jobs"
-                                               data-loading-text="Searching...">
+                                               data-loading-text="Searching..." ng-click="validateSearch()">
                                     </div>
                                 </div>
                             </div>
@@ -104,34 +104,34 @@
                     <div class="pages" id="page">
                         <ul>
                             <li>
-                                <a class="current-page" onclick="fetchResults(1)" href="#1">1</a>
+                                <a class="current-page" ng-click="fetchResults(1)" href="#1">1</a>
                             </li>
                             <li>
-                                <a onclick="fetchResults(2)" href="#2">2</a>
+                                <a ng-click="fetchResults(2)" href="#2">2</a>
                             </li>
                             <li>
-                                <a onclick="fetchResults(3)" href="#3">3</a>
+                                <a ng-click="fetchResults(3)" href="#3">3</a>
                             </li>
                             <li>
-                                <a onclick="fetchResults(4)" href="#4">4</a>
+                                <a ng-click="fetchResults(4)" href="#4">4</a>
                             </li>
                             <li>
-                                <a onclick="fetchResults(5)" href="#5">5</a>
+                                <a ng-click="fetchResults(5)" href="#5">5</a>
                             </li>
                             <li>
-                                <a onclick="fetchResults(6)" href="#6">6</a>
+                                <a ng-click="fetchResults(6)" href="#6">6</a>
                             </li>
                             <li>
-                                <a onclick="fetchResults(7)" href="#7">7</a>
+                                <a ng-click="fetchResults(7)" href="#7">7</a>
                             </li>
                             <li>
-                                <a onclick="fetchResults(8)" href="#8">8</a>
+                                <a ng-click="fetchResults(8)" href="#8">8</a>
                             </li>
                             <li>
-                                <a onclick="fetchResults(9)" href="#9">9</a>
+                                <a ng-click="fetchResults(9)" href="#9">9</a>
                             </li>
                             <li>
-                                <a onclick="fetchResults(10)" href="#10">10</a>
+                                <a ng-click="fetchResults(10)" href="#10">10</a>
                             </li>
                         </ul>
                     </div>

@@ -1,0 +1,69 @@
+<div ng-repeat="job in joblist" id="joblistwrapper">
+
+<div class="jobrow">
+
+    <!-- Post -->
+    <div class="content">
+        <div class="alpha fourteen columns">
+            <div class="post-title">
+                <h2>
+                    <a target="_blank"
+                       href="{{job.url}}"
+                       data-original-title="">{{job.title}}</a>
+                </h2></div>
+        </div>
+        <div class="alpha omega three columns">
+            <div class="post-date"><h5>{{ job.title }}</h5><br>Posted on : {{ job.postedon }}</div>
+        </div>
+        <div class="alpha eight columns post-content">
+            <div class="">
+                <div class="post-desc">
+                    <blockquote>
+                        <p> Location: {{job.locations}}}</p>
+                        <cite title="Source Title">
+                            <div class="jsummary">{{job.summary}}
+                            </div>
+                        </cite>
+                    </blockquote>
+                    <a class="post-entry"
+                       href="{{job.url}}"
+                       target="_blank" data-original-title=""> Click here for more details</a></div>
+            </div>
+            <div class="post-meta">
+                <!-- TODO: Reuse the socialmedia directive -->
+                <ul class="inline">
+                    <li></li>
+                    <li><a target="_blank"
+                           href="http://www.newsvine.com/_tools/seed&amp;save?u=http://www.bzcareer.com/SeeJob?job=https%3A%2F%2Fcibc.taleo.net%2Fcareersection%2F1%2Fjobdetail.ftl%3Fjob%3D648228&amp;h=Java Developer job openings available"
+                           data-original-title="">
+                        <img alt="newsvine share button" src="/images/social_icons/newsvine.png"></a></li>
+                    <li><a target="_blank"
+                           href="http://www.tumblr.com/share?v=3&amp;u=http%3A%2F%2Fwww.bzcareer.com%2FSeeJob%3Fjob%3Dhttps%3A%2F%2Fcibc.taleo.net%2Fcareersection%2F1%2Fjobdetail.ftl%3Fjob%3D648228&amp;t=Java Developer job openings available"
+                           data-original-title="">
+                        <img alt="tumblr share button" src="/images/social_icons/tumblr.png"></a></li>
+                    <li><a target="_blank"
+                           href="http://digg.com/submit?phase=2&amp;url=http://www.bzcareer.com/SeeJob?job=https%3A%2F%2Fcibc.taleo.net%2Fcareersection%2F1%2Fjobdetail.ftl%3Fjob%3D648228&amp;title=Java Developer job openings available"
+                           data-original-title="">
+                        <img alt="digg share button" src="/images/social_icons/digg.png"></a></li>
+                    <li><a target="_blank"
+                           href="http://www.facebook.com/share.php?u=http://www.bzcareer.com/SeeJob?job=https%3A%2F%2Fcibc.taleo.net%2Fcareersection%2F1%2Fjobdetail.ftl%3Fjob%3D648228&amp;title=Java developer Jobs in Toronto | BZCareer"
+                           data-original-title=""><img alt="facebook share button"
+                                                       src="/images/social_icons/facebook.png"></a></li>
+                    <li><a target="_blank" href="https://twitter.com/share" class="twitter-share-button"
+                           data-url="http://www.bzcareer.com/SeeJob?job=https%3A%2F%2Fcibc.taleo.net%2Fcareersection%2F1%2Fjobdetail.ftl%3Fjob%3D648228"
+                           data-original-title=""><img alt="twitter share button"
+                                                       src="/images/social_icons/twitter.png"></a></li>
+                    <li>
+                        <a href="https://plus.google.com/share?url=http://www.bzcareer.com/SeeJob?job=https%3A%2F%2Fcibc.taleo.net%2Fcareersection%2F1%2Fjobdetail.ftl%3Fjob%3D648228"
+                           onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
+                           data-original-title=""><img alt="google+ share button"
+                                                       src="/images/social_icons/googleplus.png"></a></li>
+                    <li><a target="_blank"
+                           href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://www.bzcareer.com/SeeJob?job=https%3A%2F%2Fcibc.taleo.net%2Fcareersection%2F1%2Fjobdetail.ftl%3Fjob%3D648228&amp;title=Senior Java / J2EE Developer , Capital Markets / E... &amp;summary=Found Senior Java / J2EE Developer , Capital Markets / E...  job opening with CIBC in http%3A%2F%2Fwww.bzcareer.com.&amp;source=http%3A%2F%2Fwww.bzcareer.com"
+                           data-original-title=""><img src="/images/social_icons/linkedin.png"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

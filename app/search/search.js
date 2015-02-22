@@ -50,6 +50,18 @@
       }];
 
       $scope.sidebars=[];
+      $scope.joblist=[];
+
+      var addToJobList=function(u, t, p, l, s){
+        $scope.joblist.push({
+            url:u,
+            title: t,
+            postedon: p,
+            locations: l,
+            summary: s,
+
+        })
+      };
 
       var addToSidebar=function( cu, cn,cc,  jtu,jtn, jtc ){
           $scope.sidebars.push({ compurl: cu,
@@ -63,6 +75,26 @@
 addToSidebar("http://google.com","google",10, "http://google.com","google",10);
       addToSidebar("http://google.com","google",10, "http://google.com","google",10);
       addToSidebar("http://google.com","google",10, "http://google.com","google",10);
+      addToJobList("http://google.com", "Software Engineer 1", "Feb 21 2015",
+          "Toronto, Ontario", "Google Would love to hire an engineer who is a creative thinker....");
+      addToJobList("http://google.com", "Software Engineer 2", "Feb 21 2015",
+          "Toronto, Ontario", "Google Would love to hire an engineer who is a creative thinker....");
+      addToJobList("http://google.com", "Software Engineer 3", "Feb 21 2015",
+          "Toronto, Ontario", "Google Would love to hire an engineer who is a creative thinker....");
+      addToJobList("http://google.com", "Software Engineer 4", "Feb 21 2015",
+          "Toronto, Ontario", "Google Would love to hire an engineer who is a creative thinker....");
+      addToJobList("http://google.com", "Software Engineer 5", "Feb 21 2015",
+          "Toronto, Ontario", "Google Would love to hire an engineer who is a creative thinker....");
+      addToJobList("http://google.com", "Software Engineer 6 ", "Feb 21 2015",
+          "Toronto, Ontario", "Google Would love to hire an engineer who is a creative thinker....");
+      addToJobList("http://google.com", "Software Engineer 7", "Feb 21 2015",
+          "Toronto, Ontario", "Google Would love to hire an engineer who is a creative thinker....");
+      addToJobList("http://google.com", "Software Engineer 8", "Feb 21 2015",
+          "Toronto, Ontario", "Google Would love to hire an engineer who is a creative thinker....");
+      addToJobList("http://google.com", "Software Engineer 9", "Feb 21 2015",
+          "Toronto, Ontario", "Google Would love to hire an engineer who is a creative thinker....");
+      addToJobList("http://google.com", "Software Engineer 10", "Feb 21 2015",
+          "Toronto, Ontario", "Google Would love to hire an engineer who is a creative thinker....");
 
   };
   angular.module('myApp.search', ['ngRoute', 'myApp.service.PaginQueue', 'myApp.service.datacontext','uiGmapgoogle-maps'])

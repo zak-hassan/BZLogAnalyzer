@@ -10,7 +10,32 @@
   <title>My AngularJS App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/jQuery/dist/jquery.js"></script>
+  <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/js/lib/sticky/sticky.css">
+  <script src="/js/lib/sticky/sticky.min.js"></script>
+
+
+  <script src="app.js"></script>
+  <script src="directives/contactForm.js"></script>
+  <script src="directives/topbanner.js"></script>
+  <script src="directives/about.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+  <script src="home/home.js"></script>
+  <script src="contact/contact.js"></script>
+  <script src="search/search.js"></script>
+  <script src="about/about.js"></script>
+  <script src="maps/maps.js"></script>
+
+  <!--  Services  -->
+  <script src="services/jobservice.js"></script>
+  <script src="services/PaginQueue.js"></script>
+  <script src="services/datacontext.js"></script>
+  <!-- Ajax -->
+  <script src="/js/autocomplete.js"></script>
 </head>
 <body id="bod">
 <div ng-include="'templates/navbar.html'"></div>
@@ -25,19 +50,8 @@
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-<script src="directives/contactForm.js"></script>
-<script src="directives/topbanner.js"></script>
-<script src="directives/about.js"></script>
-<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-<script src="services/searchService.js"></script>
-<script src="home/home.js"></script>
-<script src="contact/contact.js"></script>
-<script src="search/search.js"></script>
-<script src="about/about.js"></script>
-<script src="maps/maps.js"></script>
+
+
 <div ng-include="'templates/footer.html'"></div>
 
 </body>

@@ -1,4 +1,11 @@
+
+
 <div id="searchField" class="sixteen columns" style="margin: 0 auto;">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+
     <div class="" style="background: white;padding: 20px;">
         <ul class="inline">
             <li>
@@ -37,7 +44,7 @@
                         </div>
 
                         <input name="local" style="width:80%" id="location" type="text"
-                               onfocus="myAutoComplete('CA')" ng-model="location" value=""
+                               onfocus="myAutoComplete('CA')" ng-model="local" value=""
                                oninput="myAutoComplete('US')" class="text">
                         <span class="help-block"> (city, province or town)</span>
                     </div>
@@ -49,7 +56,7 @@
 
                     <div class="submit_sect">
                         <input style="width:120px;margin:30px 0px" id="searchbtn" class="btn btn-beoro-3 btn-large"
-                               ng-click="fetchSearch()"
+                               ng-click="fetchSearch(role,local)"
                                value="Find Jobs"/>
                     </div>
                 </div>

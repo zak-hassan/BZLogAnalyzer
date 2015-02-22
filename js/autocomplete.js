@@ -1,5 +1,6 @@
+(function(a){
 
-    function myKeyword(){
+    a.myKeyword= function (){
 
     $("#role" ).autocomplete({
         source: function( request, response ) {
@@ -34,8 +35,9 @@
         $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
     }
   });
- }
-    function myAutoComplete(country){
+ };
+
+    a.myAutoComplete=function(country){
 
     $("#location" ).autocomplete({
         source: function( request, response ) {
@@ -74,18 +76,19 @@
         $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
     }
   });
- }
+ };
 
-    function logkey( message ) {
+    a.logkey= function ( message ) {
         $("#role").val(message);
-    }
-    function logloc( message ) {
+    };
+    a.logloc= function ( message ) {
         $("#location").val(message);
-    }
-    function ClosePopUp(){
+    };
+    a.ClosePopUp=  function (){
         $("#err").modal('hide');
-    }
-var citiesJSON=[
+    };
+
+    a.citiesJSON=[
     "Ottawa, ON",
     "Victoria, BC",
     "Toronto, ON",
@@ -2118,3 +2121,4 @@ var citiesJSON=[
     "Montri? 1/2 Al, QC",
     "Victoria Island, BC"
 ];
+}(this));

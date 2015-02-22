@@ -7,24 +7,17 @@
         $scope.title = "";
         $scope.meta = "";
         $scope.prefix = "CA/";
-         $scope.fetchSearch = function fetchSearch() {
+        $scope.fetchSearch =function(role, local){
+            jobservice.redirectToSearchPage($scope.role, $scope.local, $scope.country);
+            console.log("Done");
+        }
 
-/*            var role = $scope.role || "";
-            var local = $scope.location || "";
-            if ($scope.country == "Canada") {
-                window.location.replace("http://www.bzcareer.com/CA/search?keyword=" + role + "&local=" + local);
-            } else {
-                window.location.replace("http://www.bzcareer.com/search?keyword=" + role + "&local=" + local);
-            }
- */
-           jobservice.getSidebar();
-             jobservice.getJob();
-             jobservice.getMap();
-        };
+
+
 
         };
 
-    angular.module('myApp.home', ['ngRoute','myApp.service'])
+    angular.module('myApp.home', ['ngRoute','myApp.service','ui.bootstrap'])
         .config(['$routeProvider', function ($routeProvider) {
             $routeProvider.when('/', {
                 templateUrl: 'home/home.html',
@@ -56,6 +49,22 @@
                 restrict: "E",
                 replace: true
             }
+        }).directive('autoComplete', function($timeout) {
+            return function(scope, iElement, iAttrs) {
+                iElement.autocomplete({
+                    source: scope[iAttrs.uiItems],
+                    select: function() {
+                        $timeout(function() {
+                            iElement.trigger('input');
+                        }, 0);
+                    }
+                });
+            };
         });
 
+
+
+
 }());
+
+

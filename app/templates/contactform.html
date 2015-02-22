@@ -10,28 +10,25 @@
             the job seeker and the employer. To get in contact with us you can leave us a brief message with your
             contact information so we can assist you.</h4>
 
-        <div class="success-message row">
-            <div class="notification success close able" style="opacity: 1 !important">
-                <p>
-                    <span>Success!</span> Your message has been sent.
-                </p>
-            </div>
-        </div>
+
+        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+
+
         <div id="contact-form" class="row-fluid" style="padding: 50px 15px">
-            <form method="get" action="contactme">
+            <form ng-submit="sendMail(name, email, msg )">
                 <div class="field row">
-                    <label>Name:</label> <input type="text" name="name" class="text">
+                    <label>Name:</label> <input type="text" ng-model="name" name="name" class="text">
                 </div>
                 <div class="field row">
                     <label>Email: <span>*</span></label>
-                    <input type="text" name="email" class="text">
+                    <input type="text" ng-model="email" name="email" class="text">
                 </div>
                 <div class="field row">
                     <label>Message: <span>*</span></label>
-                    <textarea name="message" class="text textarea"></textarea>
+                    <textarea name="message" ng-model="msg" class="text textarea"></textarea>
                 </div>
                 <div class="field row">
-                    <input type="button" id="send" class="button medium blue" value="Send Message">
+                    <input type="submit" id="send"  class="button medium blue" value="Send Message">
                     <div class="loading"></div>
                 </div>
             </form>

@@ -9,8 +9,8 @@
 
 (function(){
 
-    var app = angular.module("myApp.service.datacontext",['']);
-    app.factory("datacontext",['$http',function($http){
+    var app = angular.module('myApp.service.datacontext',[]);
+    app.factory('datacontext',['$http',function($http){
         // TODO: Put all data requests ...
         return {
             getJob:function(role, local, pagenum){

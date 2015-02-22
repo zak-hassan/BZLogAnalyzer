@@ -19,7 +19,7 @@
           if ($scope.role.trim().length == 0 && $scope.local.trim().length == 0) {
               $("#err").modal('show'); // TODO: Create Angular Modal Service to popup dialogs with custom messages.
           } else {
-              window.location.replace('http://' + location.host + "/<%-prefix %>search?keyword=" + encodeURIComponent(role) + "&local=" + encodeURIComponent(local));
+              window.location.replace('http://' + location.host + "/search?keyword=" + encodeURIComponent(role) + "&local=" + encodeURIComponent(local));
           }
       };
 
@@ -35,14 +35,32 @@
       $scope.generateMap=function(){
           // TODO: Add logic to generate map...
       };
+      $scope.map = { center: { latitude: 43, longitude: -79 }, zoom: 8 };
+
+      var addMarker=function(latitude, longitude, title){
+        return {
+            latitude: latitude,
+            longitude: longitude,
+            title: title
+        }
+      };
+      $scope.markers=[{
+          latitude: 43.7075863,
+          longitude:  -79.3957828,
+          title: "Red Hat"
+      }];
+
 
   };
-  angular.module('myApp.search', ['ngRoute', 'myApp.service.PaginQueue', 'myApp.service.datacontext'])
-      .config(['$routeProvider', function($routeProvider) {
+  angular.module('myApp.search', ['ngRoute', 'myApp.service.PaginQueue', 'myApp.service.datacontext','uiGmapgoogle-maps'])
+      .config(['$routeProvider','uiGmapGoogleMapApiProvider', function($routeProvider,uiGmapGoogleMapApiProvider) {
         $routeProvider.when('/search', {
           templateUrl: 'search/search.html',
           controller: 'SearchCtrl'
         });
+          uiGmapGoogleMapApiProvider.configure({
+              china: true
+          });
       }]).controller('SearchCtrl', SearchCtrl)
       .directive('searchmorebutton',function(){
         return {

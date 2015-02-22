@@ -4,7 +4,6 @@
 
   var SearchCtrl=function($scope, PaginQueue, datacontext){
     $scope.country="Canada";
-    $scope.sidebar="";
 
 
       $scope.next = function () {
@@ -50,6 +49,20 @@
           title: "Red Hat"
       }];
 
+      $scope.sidebars=[];
+
+      var addToSidebar=function( cu, cn,cc,  jtu,jtn, jtc ){
+          $scope.sidebars.push({ compurl: cu,
+                                compname: cn,
+                                compcount:cc,
+                                jtypeurl: jtu,
+                                jtypename: jtn,
+                                jtypecount:jtc
+                             });
+      };
+addToSidebar("http://google.com","google",10, "http://google.com","google",10);
+      addToSidebar("http://google.com","google",10, "http://google.com","google",10);
+      addToSidebar("http://google.com","google",10, "http://google.com","google",10);
 
   };
   angular.module('myApp.search', ['ngRoute', 'myApp.service.PaginQueue', 'myApp.service.datacontext','uiGmapgoogle-maps'])
@@ -85,6 +98,13 @@
             replace: true
           };
 
-  });
+  }).directive('sidebar',function(){
+          return {
+              templateUrl: "templates/sidebar.html.html",
+              restrict: "E",
+              replace: true
+          };
+
+      });;
 
 }())

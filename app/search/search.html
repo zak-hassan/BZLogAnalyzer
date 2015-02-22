@@ -97,10 +97,56 @@
         <div class="container" style="margin:0px 20px">
                 <!-- Sidebar Begins -->
 
+            <div class="three columns pull-left">
+                <div class="blog-sidebar" style="">
+                    <div class="widget">
+                        <div id="removeFilter" style="display: none;">
+                            <h5><span class="label label-info"><a style="color: #fff;" onclick="removeFilter();" data-original-title=""><i class="icon-remove"></i>Remove Filter</a></span></h5>
+                        </div>
+                        <ul id="CompanySB" class="">
+                            <li>
+                                <h5>Company</h5>
+                                <ul id="CompanySBList" style="margin-left:15px">
+                                    <li ng-repeat="sides in sidebars">
+                                        <a href="{{sides.compurl}}" data-original-title="">{{sides.compname}}({{sides.compcount}})</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h5>Job Type</h5>
+                                <ul id="JobTypeSBList" style="margin-left:15px">
+                                    <li ng-repeat="sides in sidebars">
+                                        <a href="{{sides.jtypeurl}}" data-original-title="">{{sides.jtypename}}({{sides.jtypecount}})</a>
+                                    </li>
 
+                                </ul>
+                            </li>
+
+                        </ul>
+                        <br>
+                        <div class="clearfix"></div>
+
+                    </div>
+
+                    <!-- AD -->
+                    <script type="text/javascript"><!--
+                    google_ad_client = "ca-pub-8134900906740446";
+                    /* JobSearch - Sidebar Ads */
+                    google_ad_slot = "5495116610";
+                    google_ad_width = 180;
+                    google_ad_height = 150;
+                    //-->
+                    </script>
+                    <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                    </script>
+                    <br>
+                    <br>
+
+                </div>
+            </div>
             <!-- Sidebar Ends
 
-             <sidebar></sidebar>
+
 
              -->
 

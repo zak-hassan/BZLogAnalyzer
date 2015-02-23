@@ -7,7 +7,7 @@
     <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 
     <div class="" style="background: white;padding: 20px;">
-        <ul class="inline">
+        <ul class="list-inline">
             <li>
                 <img src="/app/images/RealLogo/jpeg/LogoColorTextBelow.jpeg"
                      alt="Canada job search. Jobs search. Canadian Jobs. Job search engine."
@@ -19,15 +19,32 @@
         <br/>
         <br/>
 
-        <div id="searchBox">
-            <div class="row">
-                <div class="span4">
-                    <div id="lblrole">
-                        <h3 style="color:#23406f"> What? </h3>
-                        <input name="keyword" ng-model="role" onchange="myKeyword()" oninput="myKeyword()" id="role"
-                               style="margin:10;padding:10;width:300;" type="text" class="text span4"/>
+        <ul class="list-inline">
+            <li><h3 style="color:#23406f"> What? </h3></li>
+            <li> <input name="keyword" ng-model="role" onchange="myKeyword()" oninput="myKeyword()" id="role"
+                        style="margin:10;padding:10;width:300;" type="text" class="text span4"/></li>
+            <li><span class="help-block">(job title or job keyword)</span></li>
 
-                        <span class="help-block">(job title or job keyword)</span>
+                <li><h3 style="color:#23406f"> Where in&nbsp;</h3></li>
+                <li><h3 style="color:#23406f" id="country">{{ country }}?&nbsp;</h3></li>
+
+            <li><input name="local" style="width:80%" id="location" type="text"
+                       onfocus="myAutoComplete('CA')" ng-model="local" value=""
+                       oninput="myAutoComplete('US')" class="text"> </li>
+            <li> <span class="help-block"> (city, province or town)</span></li>
+
+        </ul>
+
+
+
+        <div id="searchBox">
+            <ul class="list-inline">
+                <li class="span4">
+                    <div id="lblrole">
+
+
+
+
                     </div>
                 </div>
                 <div class="span4 ui-widget">

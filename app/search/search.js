@@ -10,7 +10,7 @@
             companies: [],
             jobtypes: []
         };
-        $scope.pbar="60";
+        $scope.pbar = "60";
 
         $scope.next = function () {
             PaginQueue.pagin_next();
@@ -35,46 +35,9 @@
             }
 
 
-            datacontext.getJob($scope.role, $scope.local, num).then(function (response) {
-
-
-                var data = response.data;
-                angular.forEach(data, function (v, k) {
-                    if (isNaN(k) != true) {
-                        addToJobList(v["JobDetailURL"], v["CompanyName"], v["JobDate"],
-                            v["JobLocation"], v["JobDetails"]);
-                    }
-                    if (k === "sideBar") {
-                        $scope.initSideBar(v);
-                    }
-
-                });
-            }, function (error) {
-                    //TODO: Should display a model on error
-            });
+            datacontext.getJob($scope.role, $scope.local, num, addToJobList, $scope.sidebars);
 
         };
-
-        $scope.initSideBar = function (v) {
-
-            angular.forEach(v.Companies, function (sidebarValue, sidebarKey) {
-                $scope.sidebars.companies.push({
-                    compurl: "/cxf/search/company:" + sidebarKey + ",location:", //TODO: Add location here...
-                    compname: sidebarKey,
-                    compcount: sidebarValue
-                });
-
-            });
-            angular.forEach(v.JobType, function (sidebarTypeValue, sidebarTypeKey) {
-                $scope.sidebars.jobtypes.push({
-                    jtypeurl: "/cxf/search/company:" + sidebarTypeKey + ",location:", //TODO: Add location here.
-                    jtypename: sidebarTypeKey,
-                    jtypecount: sidebarTypeValue
-                });
-
-            });
-
-        }
 
 
         $scope.generateMap = function () {
@@ -120,17 +83,17 @@
         };
 
     };
-    angular.module('myApp.search', ['ngRoute', 'myApp.service.PaginQueue', 'myApp.service.datacontext','ui.bootstrap']) //'uiGmapgoogle-maps'])
+    angular.module('myApp.search', ['ngRoute', 'myApp.service.PaginQueue', 'myApp.service.datacontext', 'ui.bootstrap']) //'uiGmapgoogle-maps'])
         .config(['$routeProvider', //'uiGmapGoogleMapApiProvider',
-            function ($routeProvider){ // uiGmapGoogleMapApiProvider) {
-            $routeProvider.when('/search', {
-                templateUrl: 'search/search.html',
-                controller: 'SearchCtrl'
-            });
-            //uiGmapGoogleMapApiProvider.configure({
-            //    china: true
-            //});
-        }]).controller('SearchCtrl', SearchCtrl)
+            function ($routeProvider) { // uiGmapGoogleMapApiProvider) {
+                $routeProvider.when('/search', {
+                    templateUrl: 'search/search.html',
+                    controller: 'SearchCtrl'
+                });
+                //uiGmapGoogleMapApiProvider.configure({
+                //    china: true
+                //});
+            }]).controller('SearchCtrl', SearchCtrl)
         .directive('searchmorebutton', function () {
             return {
                 templateUrl: "templates/SearchMoreButton.html",

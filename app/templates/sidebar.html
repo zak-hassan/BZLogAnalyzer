@@ -10,7 +10,7 @@
                 <li>
                     <h5>Company</h5>
                     <ul id="CompanySBList" style="margin-left:15px">
-                        <li ng-repeat="sides in sidebars">
+                        <li ng-repeat="sides in sidebars.companies">
                             <a href="{{sides.compurl}}" data-original-title="">{{sides.compname}}({{sides.compcount}})</a>
                         </li>
                         <li><a class="post-entry" onclick="displayMoreSideBar();"
@@ -21,7 +21,7 @@
                 <li>
                     <h5>Job Type</h5>
                     <ul id="JobTypeSBList" style="margin-left:15px">
-                        <li ng-repeat="sides in sidebars">
+                        <li ng-repeat="sides in sidebars.jobtypes">
                             <a href="{{sides.jtypeurl}}" data-original-title="">{{sides.jtypename}}({{sides.jtypecount}})</a>
                         </li>
                         <li><a class="post-entry" onclick="displayMoreSideBar();"

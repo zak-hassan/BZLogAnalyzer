@@ -3,19 +3,17 @@
 (function(){
 
   var SearchCtrl=function($scope, PaginQueue, datacontext){
-    $scope.country="Canada";
-
-
+      $scope.country="Canada";
       $scope.next = function () {
           PaginQueue.pagin_next();
       }
       $scope.prev = function () {
           PaginQueue.pagin_prev();
       }
-
       $scope.validateSearch=function () {
-
-          if ($scope.role.trim().length == 0 && $scope.local.trim().length == 0) {
+          var role=$scope.role;
+          var local=$scope.local;
+          if (role.trim().length == 0 && local.trim().length == 0) {
               $("#err").modal('show'); // TODO: Create Angular Modal Service to popup dialogs with custom messages.
           } else {
               window.location.replace('http://' + location.host + "/search?keyword=" + encodeURIComponent(role) + "&local=" + encodeURIComponent(local));
@@ -58,9 +56,8 @@
             title: t,
             postedon: p,
             locations: l,
-            summary: s,
-
-        })
+            summary: s
+        });
       };
 
       var addToSidebar=function( cu, cn,cc,  jtu,jtn, jtc ){

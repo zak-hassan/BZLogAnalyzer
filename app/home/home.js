@@ -2,20 +2,16 @@
 
 (function () {
 
-    var HomeCtrl = function ($scope, $location, jobservice, $http, $log) {
+    var HomeCtrl = function ($scope, jobservice, $http, $log) {
         $scope.country = "Canada";
         $scope.title = "";
         $scope.meta = "";
         $scope.prefix = "CA/";
-        $scope.fetchSearch =function(role, local){
+        $scope.fetchSearch =function(){
             jobservice.redirectToSearchPage($scope.role, $scope.local, $scope.country);
-            console.log("Done");
+            //console.log("Done! role: "+$scope.role+" local: "+$scope.local+" country: "+$scope.country);
         }
-
-
-
-
-        };
+    };
 
     angular.module('myApp.home', ['ngRoute','myApp.service','ui.bootstrap'])
         .config(['$routeProvider', function ($routeProvider) {

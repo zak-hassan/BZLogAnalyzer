@@ -1,7 +1,5 @@
-
-
 <div>
-     <!-- END OF NEW HEADER -->
+    <!-- END OF NEW HEADER -->
     <div id="page-title" class="row-fluid" style="height:130px;background:#ffffff">
         <!-- 960 Container Start -->
         <div class="" id="logoWrapper">
@@ -28,7 +26,8 @@
                                     </label>
                                 </div>
                                 <div class="row">
-                                    <input name="role" onchange="myKeyword()" oninput="myKeyword()" style="width:80%" ng-model="role"
+                                    <input name="role" onchange="myKeyword()" oninput="myKeyword()" style="width:80%"
+                                           ng-model="role"
                                            id="role" type="text"
                                            value="" class="text">
                                 </div>
@@ -44,7 +43,9 @@
 
                                         </div>
                                     </label>
-                                    <input name="local" style="width:80%" id="location" type="text" onfocus="myAutoComplete('CA')" value="" oninput="myAutoComplete('US')" class="text" ng-model="local">
+                                    <input name="local" style="width:80%" id="location" type="text"
+                                           onfocus="myAutoComplete('CA')" value="" oninput="myAutoComplete('US')"
+                                           class="text" ng-model="local">
 
                                 </div>
                             </div>
@@ -92,271 +93,148 @@
                 <i class="icon-th-list"></i> List View
             </tab-heading>
             <!-- end of page top container-->
-    <!-- 960 Container -->
-    <div id="bodyframe" class="row-fluid">
-        <div class="container" style="margin:0px 20px">
-                <!-- Sidebar Begins -->
+            <!-- 960 Container -->
+            <div id="bodyframe" class="row-fluid">
+                <div class="container" style="margin:0px 20px">
+                    <!-- Sidebar Begins -->
 
-            <div class="three columns pull-left">
-                <div class="blog-sidebar" style="">
-                    <div class="widget">
-                        <div id="removeFilter" style="display: none;">
-                            <h5><span class="label label-info"><a style="color: #fff;" onclick="removeFilter();" data-original-title=""><i class="icon-remove"></i>Remove Filter</a></span></h5>
+                    <sidebar></sidebar>
+                    <!-- Sidebar Ends
+
+
+
+                     -->
+
+                    <div id="wrapper" class="eleven columns">
+
+                        <div id="Searchsum"><h1 style="margin: 0px 100px;width: 800px;">{{ title }}</h1></div>
+                        <!--PROGRESS BAR -->
+                        <div id="pbar" class="progress progress-info progress-striped active" style="margin-left:200px">
+                            <div class="bar" style="width: 0%"></div>
                         </div>
-                        <ul id="CompanySB" class="">
-                            <li>
-                                <h5>Company</h5>
-                                <ul id="CompanySBList" style="margin-left:15px">
-                                    <li ng-repeat="sides in sidebars">
-                                        <a href="{{sides.compurl}}" data-original-title="">{{sides.compname}}({{sides.compcount}})</a>
+                        <!--PROGRESS BAR -->
+                        <div id="json" style="margin-top:30px">
+
+                            <!-- JOB POST STARTS -->
+                            <jobposts></jobposts>
+                            <!-- JOB LIST ENDS -->
+
+                        </div>
+
+                        <div class="pagination" style="display:visible;clear:both;">
+                            <a href="#" ng-click="prev()" id="prev" class="prev off"></a>
+                            <a href="#" ng-click="next()" id="next" class="next"></a>
+
+                            <div class="pages" id="page">
+                                <ul>
+                                    <li>
+                                        <a class="current-page" ng-click="fetchResults(1)" href="#1">1</a>
                                     </li>
-                                    <li><a class="post-entry" onclick="displayMoreSideBar();" data-original-title=""><b>More</b></a></li>
-
-                                </ul>
-                            </li>
-                            <li>
-                                <h5>Job Type</h5>
-                                <ul id="JobTypeSBList" style="margin-left:15px">
-                                    <li ng-repeat="sides in sidebars">
-                                        <a href="{{sides.jtypeurl}}" data-original-title="">{{sides.jtypename}}({{sides.jtypecount}})</a>
+                                    <li>
+                                        <a ng-click="fetchResults(2)" href="#2">2</a>
                                     </li>
-                                    <li><a class="post-entry" onclick="displayMoreSideBar();" data-original-title=""><b>More</b></a></li>
-
+                                    <li>
+                                        <a ng-click="fetchResults(3)" href="#3">3</a>
+                                    </li>
+                                    <li>
+                                        <a ng-click="fetchResults(4)" href="#4">4</a>
+                                    </li>
+                                    <li>
+                                        <a ng-click="fetchResults(5)" href="#5">5</a>
+                                    </li>
+                                    <li>
+                                        <a ng-click="fetchResults(6)" href="#6">6</a>
+                                    </li>
+                                    <li>
+                                        <a ng-click="fetchResults(7)" href="#7">7</a>
+                                    </li>
+                                    <li>
+                                        <a ng-click="fetchResults(8)" href="#8">8</a>
+                                    </li>
+                                    <li>
+                                        <a ng-click="fetchResults(9)" href="#9">9</a>
+                                    </li>
+                                    <li>
+                                        <a ng-click="fetchResults(10)" href="#10">10</a>
+                                    </li>
                                 </ul>
-                            </li>
-
-                        </ul>
-                        <br>
-                        <div class="clearfix"></div>
-
-                    </div>
-
-                    <!-- AD -->
-                    <script type="text/javascript"><!--
-                    google_ad_client = "ca-pub-8134900906740446";
-                    /* JobSearch - Sidebar Ads */
-                    google_ad_slot = "5495116610";
-                    google_ad_width = 180;
-                    google_ad_height = 150;
-                    //-->
-                    </script>
-                    <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-                    </script>
-                    <br>
-                    <br>
-
-                </div>
-            </div>
-            <!-- Sidebar Ends
-
-
-
-             -->
-
-            <div id="wrapper" class="eleven columns">
-
-                <div id="Searchsum"><h1 style="margin: 0px 100px;width: 800px;">{{ title }}</h1></div>
-                <!--PROGRESS BAR -->
-                <div id="pbar" class="progress progress-info progress-striped active" style="margin-left:200px">
-                    <div class="bar" style="width: 0%"></div>
-                </div>
-                <!--PROGRESS BAR -->
-                <div id="json" style="margin-top:30px">
-
-
-                    <!-- JOB POST STARTS -->
-
-                    <div ng-repeat="job in joblist" id="joblistwrapper">
-
-                        <div class="jobrow">
-
-                            <!-- Post -->
-                            <div class="content">
-                                <div class="alpha fourteen columns">
-                                    <div class="post-title">
-                                        <h2>
-                                            <a target="_blank"
-                                               href="{{job.url}}"
-                                               data-original-title="">{{job.title}}</a>
-                                        </h2></div>
-                                </div>
-                                <div class="alpha omega three columns">
-                                    <div class="post-date"><h5>{{ job.title }}</h5><br>Posted on : {{ job.postedon }}</div>
-                                </div>
-                                <div class="alpha eight columns post-content">
-                                    <div class="">
-                                        <div class="post-desc">
-                                            <blockquote>
-                                                <p> Location: {{job.locations}}}</p>
-                                                <cite title="Source Title">
-                                                    <div class="jsummary">{{job.summary}}
-                                                    </div>
-                                                </cite>
-                                            </blockquote>
-                                            <a class="post-entry"
-                                               href="{{job.url}}"
-                                               target="_blank" data-original-title=""> Click here for more details</a></div>
-                                    </div>
-                                    <div class="post-meta">
-                                        <!-- TODO: Reuse the socialmedia directive -->
-                                        <ul class="inline">
-                                            <li></li>
-                                            <li><a target="_blank"
-                                                   href="http://www.newsvine.com/_tools/seed&amp;save?u=http://www.bzcareer.com/SeeJob?job=https%3A%2F%2Fcibc.taleo.net%2Fcareersection%2F1%2Fjobdetail.ftl%3Fjob%3D648228&amp;h=Java Developer job openings available"
-                                                   data-original-title="">
-                                                <img alt="newsvine share button" src="/images/social_icons/newsvine.png"></a></li>
-                                            <li><a target="_blank"
-                                                   href="http://www.tumblr.com/share?v=3&amp;u=http%3A%2F%2Fwww.bzcareer.com%2FSeeJob%3Fjob%3Dhttps%3A%2F%2Fcibc.taleo.net%2Fcareersection%2F1%2Fjobdetail.ftl%3Fjob%3D648228&amp;t=Java Developer job openings available"
-                                                   data-original-title="">
-                                                <img alt="tumblr share button" src="/images/social_icons/tumblr.png"></a></li>
-                                            <li><a target="_blank"
-                                                   href="http://digg.com/submit?phase=2&amp;url=http://www.bzcareer.com/SeeJob?job=https%3A%2F%2Fcibc.taleo.net%2Fcareersection%2F1%2Fjobdetail.ftl%3Fjob%3D648228&amp;title=Java Developer job openings available"
-                                                   data-original-title="">
-                                                <img alt="digg share button" src="/images/social_icons/digg.png"></a></li>
-                                            <li><a target="_blank"
-                                                   href="http://www.facebook.com/share.php?u=http://www.bzcareer.com/SeeJob?job=https%3A%2F%2Fcibc.taleo.net%2Fcareersection%2F1%2Fjobdetail.ftl%3Fjob%3D648228&amp;title=Java developer Jobs in Toronto | BZCareer"
-                                                   data-original-title=""><img alt="facebook share button"
-                                                                               src="/images/social_icons/facebook.png"></a></li>
-                                            <li><a target="_blank" href="https://twitter.com/share" class="twitter-share-button"
-                                                   data-url="http://www.bzcareer.com/SeeJob?job=https%3A%2F%2Fcibc.taleo.net%2Fcareersection%2F1%2Fjobdetail.ftl%3Fjob%3D648228"
-                                                   data-original-title=""><img alt="twitter share button"
-                                                                               src="/images/social_icons/twitter.png"></a></li>
-                                            <li>
-                                                <a href="https://plus.google.com/share?url=http://www.bzcareer.com/SeeJob?job=https%3A%2F%2Fcibc.taleo.net%2Fcareersection%2F1%2Fjobdetail.ftl%3Fjob%3D648228"
-                                                   onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
-                                                   data-original-title=""><img alt="google+ share button"
-                                                                               src="/images/social_icons/googleplus.png"></a></li>
-                                            <li><a target="_blank"
-                                                   href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://www.bzcareer.com/SeeJob?job=https%3A%2F%2Fcibc.taleo.net%2Fcareersection%2F1%2Fjobdetail.ftl%3Fjob%3D648228&amp;title=Senior Java / J2EE Developer , Capital Markets / E... &amp;summary=Found Senior Java / J2EE Developer , Capital Markets / E...  job opening with CIBC in http%3A%2F%2Fwww.bzcareer.com.&amp;source=http%3A%2F%2Fwww.bzcareer.com"
-                                                   data-original-title=""><img src="/images/social_icons/linkedin.png"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
                             </div>
+
+
                         </div>
-                    </div>
+                        <div class="ad" style="display:none;">
 
-                    <!-- JOB LIST ENDS -->
-
-
-
-
-
-                </div>
-
-                <div class="pagination" style="display:visible;clear:both;">
-                    <a href="#" ng-click="prev()" id="prev" class="prev off"></a>
-                    <a href="#" ng-click="next()" id="next" class="next"></a>
-
-                    <div class="pages" id="page">
-                        <ul>
-                            <li>
-                                <a class="current-page" ng-click="fetchResults(1)" href="#1">1</a>
-                            </li>
-                            <li>
-                                <a ng-click="fetchResults(2)" href="#2">2</a>
-                            </li>
-                            <li>
-                                <a ng-click="fetchResults(3)" href="#3">3</a>
-                            </li>
-                            <li>
-                                <a ng-click="fetchResults(4)" href="#4">4</a>
-                            </li>
-                            <li>
-                                <a ng-click="fetchResults(5)" href="#5">5</a>
-                            </li>
-                            <li>
-                                <a ng-click="fetchResults(6)" href="#6">6</a>
-                            </li>
-                            <li>
-                                <a ng-click="fetchResults(7)" href="#7">7</a>
-                            </li>
-                            <li>
-                                <a ng-click="fetchResults(8)" href="#8">8</a>
-                            </li>
-                            <li>
-                                <a ng-click="fetchResults(9)" href="#9">9</a>
-                            </li>
-                            <li>
-                                <a ng-click="fetchResults(10)" href="#10">10</a>
-                            </li>
-                        </ul>
-                    </div>
-
-
-                </div>
-                <div class="ad" style="display:none;">
-
-                    <!-- START OF ADS-->
-                    <script type="text/javascript"><!--
-                    google_ad_client = "ca-pub-8134900906740446";
-                    /* JobSearch */
-                    google_ad_slot = "5056294619";
-                    google_ad_width = 728;
-                    google_ad_height = 90;
-                    //-->
-                    </script>
-                    <script type="text/javascript"
-                            src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-                    </script>
-
-                </div>
-                <div class="two columns">
-                    <div class="sidebar">
-                        <div style="display:none;">
-
+                            <!-- START OF ADS-->
                             <script type="text/javascript"><!--
                             google_ad_client = "ca-pub-8134900906740446";
-                            /* JobSearch3 */
-                            google_ad_slot = "1653673019";
-                            google_ad_width = 120;
-                            google_ad_height = 600;
+                            /* JobSearch */
+                            google_ad_slot = "5056294619";
+                            google_ad_width = 728;
+                            google_ad_height = 90;
                             //-->
                             </script>
                             <script type="text/javascript"
                                     src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                             </script>
+
                         </div>
+                        <div class="two columns">
+                            <div class="sidebar">
+                                <div style="display:none;">
+
+                                    <script type="text/javascript"><!--
+                                    google_ad_client = "ca-pub-8134900906740446";
+                                    /* JobSearch3 */
+                                    google_ad_slot = "1653673019";
+                                    google_ad_width = 120;
+                                    google_ad_height = 600;
+                                    //-->
+                                    </script>
+                                    <script type="text/javascript"
+                                            src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                                    </script>
+                                </div>
 
 
+                            </div>
+                        </div>
                     </div>
+
+                    <script type="text/javascript">
+
+                        var _gaq = _gaq || [];
+                        _gaq.push(['_setAccount', 'UA-37289801-1']);
+                        _gaq.push(['_trackPageview']);
+
+                        (function () {
+                            var ga = document.createElement('script');
+                            ga.type = 'text/javascript';
+                            ga.async = true;
+                            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                            var s = document.getElementsByTagName('script')[0];
+                            s.parentNode.insertBefore(ga, s);
+                        })();
+
+                    </script>
+
+
                 </div>
+
             </div>
-
-            <script type="text/javascript">
-
-                var _gaq = _gaq || [];
-                _gaq.push(['_setAccount', 'UA-37289801-1']);
-                _gaq.push(['_trackPageview']);
-
-                (function () {
-                    var ga = document.createElement('script');
-                    ga.type = 'text/javascript';
-                    ga.async = true;
-                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(ga, s);
-                })();
-
-            </script>
-
-
-
-        </div>
-
-    </div>
         </tab>
-        <tab  select="showMap()">
+        <tab select="showMap()">
             <tab-heading>
                 <i class="icon-zoom-in"></i> Map View
             </tab-heading>
 
-    <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+            <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
             <ui-gmap-markers models="markers" coords="'self'" icon="'icon'">
             </ui-gmap-markers>
-<style rel="stylesheet" type="text/css">
-    .angular-google-map-container { height: 800px; }
-</style>
+            <style rel="stylesheet" type="text/css">
+                .angular-google-map-container {
+                    height: 800px;
+                }
+            </style>
 
         </tab>
     </tabset>

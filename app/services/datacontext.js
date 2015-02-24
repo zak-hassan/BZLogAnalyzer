@@ -14,12 +14,8 @@
         // TODO: Put all data requests ...
         return {
             getJob:function(role, local, pagenum){
-                $http.get("http://localhost:8000/js/ajaxSearchjsonpCanada.json?company=All&role="+role+"&location="+local+"&page="+pagenum+"&callback=_jqjsp").then(function(response){
-                    console.dir(response);
-                    return response;
-                },function(error){
-
-                });
+               var promise= $http.get("http://localhost:8000/js/ajaxSearchjsonpCanada.json");
+                return promise;
 
             }
 

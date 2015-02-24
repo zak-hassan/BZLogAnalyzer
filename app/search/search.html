@@ -14,7 +14,7 @@
 
             <div id="searchField" class="span11" style="margin: 20px;padding:10px">
                 <!-- Page Title End -->
-                <form ng-submit="findJobs(role, local)">
+
                     <div id="searchBox">
                         <div>
                             <div class="span5">
@@ -56,13 +56,13 @@
                                     <div class="row">
                                         <input style="width:120px;margin:45px 20px" type="submit" id="searchbtn"
                                                class="btn btn-beoro-3 btn-large" value="Find Jobs"
-                                               data-loading-text="Searching...">
+                                               data-loading-text="Searching..."  ng-click="fetchResults()">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </form>
+
             </div>
         </div>
     </div>

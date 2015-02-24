@@ -1,115 +1,81 @@
-_jqjsp(
 {
-
-"0":
-
-{
-
-"CompanyName": "KAR Auction Services",
-"JobType": "Full Time",
-"JobLocation": "ON-Toronto",
-"JobTitle": "Java Developer 1",
-"JobID1": "212965",
-"JobDetailURL": "https://kar.taleo.net/careersection/kar_can/jobdetail.ftl?job=212965",
-"JobDetails": "Job Description \nWe are seeking an experienced Java Developer to join our ADESA Canada Downtown Toronto office to be par of our Data Services B2B Integ..."
-
-},
-"1":
-{
-
-"CompanyName": "KAR Auction Services",
-"JobType": "Full Time",
-"JobLocation": "ON-Toronto",
-"JobTitle": "Java Developer",
-"JobID1": "212570",
-"JobDetailURL": "https://kar.taleo.net/careersection/kar_can/jobdetail.ftl?job=212570",
-"JobDetails": "Job Description \n \nWe are seeking an experienced Java Developer to join our ADESA Canada Downtown Toronto office to be part of our Open sale Toronto pr..."
-
-},
-"2":
-{
-
-"CompanyName": "CBC Radio-Canada",
-"JobType": "Full Time",
-"JobLocation": "Toronto",
-"JobTitle": "Senior Java Developer (English Services)",
-"JobID1": "247664",
-"JobDate": "Jan, 30, 2015",
-"JobDetailURL": "https://cbc.taleo.net/careersection/2/jobdetail.ftl?job=247664",
-"JobDetails": "What it's like working at CBC/Radio-Canada\n \nWhether on-air or behind the scenes, here you join a team that thrives on making the connections and tellin..."
-
-},
-"3":
-{
-
-"CompanyName": "Symcor",
-"JobType": "Full Time",
-"JobLocation": "CA-ON-Toronto",
-"JobTitle": "Application Developer V - Java",
-"JobID1": "86160",
-"JobDetailURL": "https://symcor.taleo.net/careersection/10021/jobdetail.ftl?job=86160",
-"JobDetails": "ABOUT SYMCOR\nSymcor helps its customers stay competitive by providing cost-effective outsourcing solutions for their financial processing needs. With st..."
-
-},
-"4":
-{
-
-"CompanyName": "Sun Life Financial",
-"JobType": "Full Time",
-"JobLocation": "CA-ON-Toronto, CA-ON-Waterloo",
-"JobTitle": "Java Web Application Designer",
-"JobID1": "402884",
-"JobDate": "Feb, 4, 2015",
-"JobDetailURL": "http://sunlifefinancial.taleo.net/careersection/10160/jobdetail.ftl?job=402884",
-"JobDetails": "Role Summary:\n \nThe Digital, CRM and Contact Centre Application Services (DCCAS) group in Enterprise Services delivers applications and solutions target..."
-
-},
-"5":
-{
-
-"CompanyName": "Symcor",
-"JobType": "Full Time",
-"JobLocation": "CA-ON-Toronto",
-"JobTitle": "Application Developer IV - Java",
-"JobID1": "86180",
-"JobDetailURL": "https://symcor.taleo.net/careersection/10021/jobdetail.ftl?job=86180",
-"JobDetails": "ABOUT SYMCOR\nSymcor helps its customers stay competitive by providing cost-effective outsourcing solutions for their financially processing needs. With ..."
-
-},
-"6":
-{
-
-"CompanyName": "Sun Life Financial",
-"JobType": "Full Time",
-"JobLocation": "CA-ON-Waterloo, CA-ON-Toronto",
-"JobTitle": "Application Designer/ Systems Analyst- Java",
-"JobID1": "414544",
-"JobDate": "Feb, 2, 2015",
-"JobDetailURL": "http://sunlifefinancial.taleo.net/careersection/10160/jobdetail.ftl?job=414544",
-"JobDetails": "This is a full time position that can be located either at our office in Waterloo or Toronto (Victoria Park and Sheppard).\n \nRole Summary:\n \nThe Group B..."
-
-},
-"TotalJobs": 7,
-"TotalPages": 1,
-"sideBar":
-{
-
-"Companies":
-
-{
-
-"KAR Auction Services": 2,
-"Symcor": 2,
-"Sun Life Financial": 2,
-"CBC Radio-Canada": 1
-
-},
-"JobType":
-
-{
-"Full Time": 7
+  "0": {
+    "CompanyName": "KAR Auction Services",
+    "JobType": "Full Time",
+    "JobLocation": "ON-Toronto",
+    "JobTitle": "Java Developer 1",
+    "JobID1": "212965",
+    "JobDetailURL": "https://kar.taleo.net/careersection/kar_can/jobdetail.ftl?job=212965",
+    "JobDetails": "Job Description \nWe are seeking an experienced Java Developer to join our ADESA Canada Downtown Toronto office to be par of our Data Services B2B Integ..."
+  },
+  "1": {
+    "CompanyName": "KAR Auction Services",
+    "JobType": "Full Time",
+    "JobLocation": "ON-Toronto",
+    "JobTitle": "Java Developer",
+    "JobID1": "212570",
+    "JobDetailURL": "https://kar.taleo.net/careersection/kar_can/jobdetail.ftl?job=212570",
+    "JobDetails": "Job Description \n \nWe are seeking an experienced Java Developer to join our ADESA Canada Downtown Toronto office to be part of our Open sale Toronto pr..."
+  },
+  "2": {
+    "CompanyName": "CBC Radio-Canada",
+    "JobType": "Full Time",
+    "JobLocation": "Toronto",
+    "JobTitle": "Senior Java Developer (English Services)",
+    "JobID1": "247664",
+    "JobDate": "Jan, 30, 2015",
+    "JobDetailURL": "https://cbc.taleo.net/careersection/2/jobdetail.ftl?job=247664",
+    "JobDetails": "What it's like working at CBC/Radio-Canada\n \nWhether on-air or behind the scenes, here you join a team that thrives on making the connections and tellin..."
+  },
+  "3": {
+    "CompanyName": "Symcor",
+    "JobType": "Full Time",
+    "JobLocation": "CA-ON-Toronto",
+    "JobTitle": "Application Developer V - Java",
+    "JobID1": "86160",
+    "JobDetailURL": "https://symcor.taleo.net/careersection/10021/jobdetail.ftl?job=86160",
+    "JobDetails": "ABOUT SYMCOR\nSymcor helps its customers stay competitive by providing cost-effective outsourcing solutions for their financial processing needs. With st..."
+  },
+  "4": {
+    "CompanyName": "Sun Life Financial",
+    "JobType": "Full Time",
+    "JobLocation": "CA-ON-Toronto, CA-ON-Waterloo",
+    "JobTitle": "Java Web Application Designer",
+    "JobID1": "402884",
+    "JobDate": "Feb, 4, 2015",
+    "JobDetailURL": "http://sunlifefinancial.taleo.net/careersection/10160/jobdetail.ftl?job=402884",
+    "JobDetails": "Role Summary:\n \nThe Digital, CRM and Contact Centre Application Services (DCCAS) group in Enterprise Services delivers applications and solutions target..."
+  },
+  "5": {
+    "CompanyName": "Symcor",
+    "JobType": "Full Time",
+    "JobLocation": "CA-ON-Toronto",
+    "JobTitle": "Application Developer IV - Java",
+    "JobID1": "86180",
+    "JobDetailURL": "https://symcor.taleo.net/careersection/10021/jobdetail.ftl?job=86180",
+    "JobDetails": "ABOUT SYMCOR\nSymcor helps its customers stay competitive by providing cost-effective outsourcing solutions for their financially processing needs. With ..."
+  },
+  "6": {
+    "CompanyName": "Sun Life Financial",
+    "JobType": "Full Time",
+    "JobLocation": "CA-ON-Waterloo, CA-ON-Toronto",
+    "JobTitle": "Application Designer/ Systems Analyst- Java",
+    "JobID1": "414544",
+    "JobDate": "Feb, 2, 2015",
+    "JobDetailURL": "http://sunlifefinancial.taleo.net/careersection/10160/jobdetail.ftl?job=414544",
+    "JobDetails": "This is a full time position that can be located either at our office in Waterloo or Toronto (Victoria Park and Sheppard).\n \nRole Summary:\n \nThe Group B..."
+  },
+  "TotalJobs": 7,
+  "TotalPages": 1,
+  "sideBar": {
+    "Companies": {
+      "KAR Auction Services": 2,
+      "Symcor": 2,
+      "Sun Life Financial": 2,
+      "CBC Radio-Canada": 1
+    },
+    "JobType": {
+      "Full Time": 7
+    }
+  }
 }
-}
-
-}
-)

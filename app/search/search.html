@@ -109,7 +109,9 @@
 
                         <div id="Searchsum"><h1 style="margin: 0px 100px;width: 800px;">{{ title }}</h1></div>
                         <!--PROGRESS BAR -->
-                        <div class="col-sm-4"  style="margin-left:200px"><progressbar  type="info" animate="true" value="pbar"></progressbar></div>
+                        <div id="pbar" class="progress progress-info progress-striped active" style="margin-left:200px">
+                            <div class="bar" style="width: 0%"></div>
+                        </div>
 
                         <!--PROGRESS BAR -->
                         <div id="json" style="margin-top:30px">
@@ -276,8 +278,6 @@
     <script src="/js/lib/sticky/sticky.min.js"></script>
 
     <script src="/js/tooltip.js"></script>
-
-
     <!-- TODO: Turn this html modal into a javascript function that can be called that will generate a model instead of leaving html in the codebase. -->
     <div id="messaging">
         <div class="modal hide fade" id="err">

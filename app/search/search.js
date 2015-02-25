@@ -1,17 +1,12 @@
 'use strict';
-
 (function () {
-
     var SearchCtrl = function ($scope, PaginQueue, datacontext) {
-
         $scope.country = "Canada";
-
         $scope.sidebars = {
             companies: [],
             jobtypes: []
         };
         $scope.pbar = "60";
-
         $scope.next = function () {
             PaginQueue.pagin_next();
         }
@@ -24,25 +19,15 @@
             if (role.trim().length == 0 && local.trim().length == 0) {
                 $("#err").modal('show'); // TODO: Create Angular Modal Service to popup dialogs with custom messages.
             } else {
+                //TODO: replace with angular $location ....
                 window.location.replace('http://' + location.host + "/search?keyword=" + encodeURIComponent(role) + "&local=" + encodeURIComponent(local));
             }
         };
-
         $scope.fetchResults = function (num) {
-            // TODO: Add logic to utilize data
-            if (!num) {
-                num = 1;
-            }
-
-
+            num = num || 1;
             datacontext.getJob($scope.role, $scope.local, num, addToJobList, $scope.sidebars);
-
         };
 
-
-        $scope.generateMap = function () {
-            // TODO: Add logic to generate map...
-        };
         $scope.map = {center: {latitude: 43, longitude: -79}, zoom: 8};
 
         var addMarker = function (latitude, longitude, title) {
@@ -52,15 +37,13 @@
                 title: title
             }
         };
+
         $scope.markers = [{
             latitude: 43.7075863,
             longitude: -79.3957828,
             title: "Red Hat"
         }];
-
-
         $scope.joblist = [];
-
         var addToJobList = function (u, t, p, l, s) {
             $scope.joblist.push({
                 url: u,
@@ -70,7 +53,6 @@
                 summary: s
             });
         };
-
         var addToSidebar = function (cu, cn, cc, jtu, jtn, jtc) {
             $scope.sidebars.push({
                 compurl: cu,
@@ -81,7 +63,6 @@
                 jtypecount: jtc
             });
         };
-
     };
     angular.module('myApp.search', ['ngRoute', 'myApp.service.PaginQueue', 'myApp.service.datacontext', 'ui.bootstrap']) //'uiGmapgoogle-maps'])
         .config(['$routeProvider', //'uiGmapGoogleMapApiProvider',
@@ -104,7 +85,6 @@
                 },
                 replace: true
             };
-
         }).directive('jobposts', function () {
             return {
                 templateUrl: "templates/jobpost.html",
@@ -129,8 +109,5 @@
                 restrict: "E",
                 replace: true
             };
-
         });
-    ;
-
 }())

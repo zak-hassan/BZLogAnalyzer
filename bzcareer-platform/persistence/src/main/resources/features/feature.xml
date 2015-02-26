@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="bzcareer-persistence-${project.version}">
+    <feature name="bzcareer-persistence" version="${project.version}"  resolver='(obr)'>
+        <bundle>mvn:com.bzcareer.paas/${project.artifactId}/${project.version}</bundle>
+    </feature>
+</features>

@@ -13,9 +13,100 @@
 
 	<properties>
 		<version.maven-bundle-plugin>2.5.0</version.maven-bundle-plugin>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+		<maven-resources-plugin.version>2.6</maven-resources-plugin.version>
+		<build-helper-maven-plugin.version>1.8</build-helper-maven-plugin.version>
+		<maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
+		<java.version>1.7</java.version>
+		<slf4j.version>1.7.5</slf4j.version>
+
+		<!-- JSON -->
+		<json.version>20140107</json.version>
+		<jackson.version>2.4.1</jackson.version>
+
+		<!-- OSGi stuff -->
+		<osgi.version>5.0.0</osgi.version>
+		<scr-annotations.version>1.9.8</scr-annotations.version>
+
+		<!-- Netty.IO -->
+		<netty.version>4.0.21.Final</netty.version>
+
+		<!-- Hazelcast -->
+		<hazelcast.version>3.2.4</hazelcast.version>
+
+		<!-- JSON -->
+		<json.version>20140107</json.version>
+		<jackson.version>2.4.1</jackson.version>
+
+		<!-- Plug-ins -->
+		<license.plugin.version>2.6</license.plugin.version>
+		<scr-plugin.version>1.17.0</scr-plugin.version>
+		<bnd-plugin.version>2.4.0</bnd-plugin.version>
+
 	</properties>
 
 	<dependencies>
+		<!-- OSGi -->
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>${osgi.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.compendium</artifactId>
+			<version>${osgi.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.enterprise</artifactId>
+			<version>${osgi.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- SCR -->
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.scr.annotations</artifactId>
+			<version>${scr-annotations.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- JAXRS & JSON -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+			<version>${jackson.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>${json.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- Utils & Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- MONGO -->
 		<dependency>
 			<groupId>org.mongojack</groupId>
 			<artifactId>mongojack</artifactId>
@@ -59,8 +150,10 @@
 							com.wordnik.swagger.jaxrs.config,
 							com.wordnik.swagger.jaxrs.listing,
 							com.wordnik.swagger.annotations,
-							com.fasterxml.jackson.annotation, com.fasterxml.jackson.core, com.fasterxml.jackson.databind,
-							com.fasterxml.jackson.jaxrs.json, javax.ws.rs.ext,*
+							com.fasterxml.jackson.annotation, com.fasterxml.jackson.core,
+							com.fasterxml.jackson.databind,
+							com.fasterxml.jackson.jaxrs.json,
+							javax.ws.rs.ext,*
 						</Import-Package>
 						<Export-Package>
 							com.wordnik.swagger.sample.resource,
@@ -87,28 +180,11 @@
 				</executions>
 			</plugin>
 			<!-- For features -->
-		<!-- 	<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>attach-artifacts</id>
-						<phase>package</phase>
-						<goals>
-							<goal>attach-artifact</goal>
-						</goals>
-						<configuration>
-							<artifacts>
-								<artifact>
-									<file>target/classes/features.xml</file>
-									<type>xml</type>
-									<classifier>features</classifier>
-								</artifact>
-							</artifacts>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin> -->
+			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>build-helper-maven-plugin</artifactId> 
+				<executions> <execution> <id>attach-artifacts</id> <phase>package</phase> 
+				<goals> <goal>attach-artifact</goal> </goals> <configuration> <artifacts> 
+				<artifact> <file>target/classes/features.xml</file> <type>xml</type> <classifier>features</classifier> 
+				</artifact> </artifacts> </configuration> </execution> </executions> </plugin> -->
 
 		</plugins>
 	</build>

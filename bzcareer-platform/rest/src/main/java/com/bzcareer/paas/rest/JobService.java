@@ -7,17 +7,23 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+
+import com.bzcareer.pass.persistence.MongoDBService;
  
-@Path("/jobservice")
+@Path("/api")
  public class JobService {
  
+	//TODO: Use references in osgi rather then this 
+	MongoDBService mservice= new MongoDBService();
 	
 //TODO: Add some logic here to pull data from the persistence service via osgi
 	@GET
     @Path("/jobs")
 	@Produces("application/json")
-	public List<String> getCustomer( ) {
-        List<String> list= new ArrayList<String>();
+	public List<String> getCustomer( @QueryParam("keyword") String keyword, @QueryParam("location") String local) {
+		//TODO: Add logic for connecting to mongodb.
+		
+		List<String> list= new ArrayList<String>();
        list.add("Hello");
        
        return list;

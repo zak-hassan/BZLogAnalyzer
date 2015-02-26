@@ -1,14 +1,86 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.bzcareer.paas</groupId>
-    <artifactId>bzcareer-platform</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  
-  <artifactId>rest</artifactId>
-  <name>BZCareer :: Rest</name>
-  <description>BZCareer rest webservices</description>
-   
-    
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.bzcareer.paas</groupId>
+		<artifactId>bzcareer-platform</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>rest</artifactId>
+	<name>BZCareer :: Rest</name>
+	<description>BZCareer Rest Web Services</description>
+	<properties>
+		<version.maven-bundle-plugin>2.5.0</version.maven-bundle-plugin>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>com.bzcareer.paas</groupId>
+			<artifactId>persistence</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<!-- Felix plugin to generate bundles -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>${version.maven-bundle-plugin}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Description>${project.description}</Bundle-Description>
+						<Import-Package>*
+						</Import-Package>
+						<Export-Package>
+							com.bzcareer.paas.persistence
+						</Export-Package>
+
+					</instructions>
+				</configuration>
+			</plugin>
+
+
+			<!-- Putting folders in resources on the classpath -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>filter</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>resources</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- For features -->
+			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>build-helper-maven-plugin</artifactId> 
+				<executions> <execution> <id>attach-artifacts</id> <phase>package</phase> 
+				<goals> <goal>attach-artifact</goal> </goals> <configuration> <artifacts> 
+				<artifact> <file>target/classes/features.xml</file> <type>xml</type> <classifier>features</classifier> 
+				</artifact> </artifacts> </configuration> </execution> </executions> </plugin> -->
+
+		</plugins>
+	</build>
+
 </project>

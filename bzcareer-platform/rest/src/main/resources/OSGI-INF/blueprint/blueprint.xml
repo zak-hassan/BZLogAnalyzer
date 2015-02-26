@@ -6,13 +6,12 @@
       http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
       http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/jaxrs.xsd
       http://cxf.apache.org/blueprint/core http://cxf.apache.org/schemas/blueprint/core.xsd">
+	
 	<jaxrs:server id="jobService" address="/jservice">
 		<jaxrs:serviceBeans>
 			<ref component-id="jobSvc" />
 		</jaxrs:serviceBeans>
-		<jaxrs:features>
-			<bean class="org.apache.cxf.jaxrs.swagger.SwaggerFeature" />
-		</jaxrs:features>
+		 
 		<jaxrs:providers>
 			<bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
 		</jaxrs:providers>

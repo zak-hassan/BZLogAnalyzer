@@ -9,6 +9,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
 import com.bzcareer.pass.persistence.MongoDBService;
+import com.bzcareer.pass.persistence.SearchResults;
  
 @Path("/api")
  public class JobService {
@@ -20,11 +21,12 @@ import com.bzcareer.pass.persistence.MongoDBService;
 	@GET
     @Path("/jobs")
 	@Produces("application/json")
-	public List<String> getCustomer( @QueryParam("keyword") String keyword, @QueryParam("location") String local) {
+	public List<SearchResults> getCustomer( @QueryParam("keyword") String keyword, @QueryParam("location") String local, 
+			@QueryParam("num") int num) {
 		//TODO: Add logic for connecting to mongodb.
+		List<SearchResults> list=mservice.query(keyword, local, num);
 		
-		List<String> list= new ArrayList<String>();
-       list.add("Hello");
+		 
        
        return list;
     }

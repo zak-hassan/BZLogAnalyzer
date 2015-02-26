@@ -11,6 +11,8 @@ angular.module('myApp', [
   'myApp.service',
     'ui.bootstrap'
 ]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/'});
+config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider) {
+$routeProvider.otherwise({redirectTo: '/'});
+//  $locationProvider.html5Mode(true);
+
 }]);

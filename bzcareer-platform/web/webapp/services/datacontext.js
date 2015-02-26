@@ -12,7 +12,7 @@
         // TODO: Put all data requests ...
         return {
             getJob: function (role, local, pagenum, addToJobList, sidebars) {
-                $http.get("http://localhost:8000/js/ajaxSearchjsonpCanada.json").then(function (response) {
+                $http.get("http://localhost:8181/web/js/ajaxSearchjsonpCanada.json").then(function (response) {
                     $("#pbar").show();
                     var data = response.data;
                     angular.forEach(data, function (v, k) {

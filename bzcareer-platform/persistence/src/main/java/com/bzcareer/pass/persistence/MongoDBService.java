@@ -15,4 +15,9 @@ public class MongoDBService {
 		return null;
 	}
 
+	public List<SearchResults> queryByCompany(String company, String role,
+			String location, int page) {
+		return new ArrayList<SearchResults>();
+	}
+
 }

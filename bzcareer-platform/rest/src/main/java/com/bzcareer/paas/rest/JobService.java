@@ -21,13 +21,15 @@ import com.bzcareer.pass.persistence.SearchResults;
 	@GET
     @Path("/jobs")
 	@Produces("application/json")
-	public List<SearchResults> getCustomer( @QueryParam("keyword") String keyword, @QueryParam("location") String local, 
-			@QueryParam("num") int num) {
+	public List<SearchResults> getCustomer( @QueryParam("role") String role, @QueryParam("location") String location, 
+			@QueryParam("page") int page, @QueryParam("company") String company) {
 		//TODO: Add logic for connecting to mongodb.
-		List<SearchResults> list=mservice.query(keyword, local, num);
-		
-		 
-       
+		List<SearchResults> list;
+		if(company.equalsIgnoreCase("all")){
+			 list=mservice.query(role, location, page);
+		} else {
+			list= mservice.queryByCompany(company,role,location, page);
+		}
        return list;
     }
 	

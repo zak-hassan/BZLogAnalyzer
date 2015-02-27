@@ -36,14 +36,11 @@ import com.bzcareer.pass.persistence.SearchResults;
 	@GET
 	@Path("/autocomplete")
 	@Produces("application/json")
-	public List<String> getKeywords(@QueryParam("start_with") String starts_with){
-		List<String> list= new ArrayList<String>();
-		if(starts_with.equals("J"))
-		list.add("Java");
-		list.add("Janitor");
-		list.add("Java Developer");
+	public List<String> getKeywords(@QueryParam("start_with") String starts_with, @QueryParam("country") String country){
 		
-		return list;
+		return mservice.queryAutocomplete(starts_with, country);
+		
+		
 	}
 	
 }

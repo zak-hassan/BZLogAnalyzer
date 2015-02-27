@@ -112,7 +112,18 @@
 			<artifactId>mongojack</artifactId>
 			<version>2.1.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>3.0.0-beta2</version>
+		</dependency>
 	</dependencies>
+	<repositories>
+	   <repository>
+            <id>sonatype-snapshot</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
+	</repositories>
 
 	<build>
 		<finalName>${project.artifactId}</finalName>
@@ -145,7 +156,7 @@
 						<Import-Package>*
 						</Import-Package>
 						<Export-Package>
-						com.bzcareer.paas.persistence
+							com.bzcareer.paas.persistence
 						</Export-Package>
 
 					</instructions>

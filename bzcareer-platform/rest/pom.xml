@@ -7,7 +7,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>rest</artifactId>
-	<name>BZCareer :: Rest</name>
+	<name>BZCareer :: Platform :: Rest</name>
 	<description>BZCareer Rest Web Services</description>
 	<packaging>bundle</packaging>
 	<properties>

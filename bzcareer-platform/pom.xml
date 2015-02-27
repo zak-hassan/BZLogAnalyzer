@@ -21,7 +21,7 @@
   	<module>persistence</module>
   	<module>web</module>
   	<module>metrics</module>
-  	<module>ranking-algorithm</module>
+  	
   </modules>
   
 </project>

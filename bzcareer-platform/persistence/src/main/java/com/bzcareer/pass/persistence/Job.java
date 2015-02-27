@@ -10,6 +10,15 @@ public class Job {
 	String JobID1;
 	String JobID2;
 	String JobDetails;
+	
+	@Override
+	public String toString() {
+		return "Job [JobTitle=" + JobTitle + ", JobDetailURL=" + JobDetailURL
+				+ ", JobLocation=" + JobLocation + ", JobDate=" + JobDate
+				+ ", JobType=" + JobType + ", CompanyName=" + CompanyName
+				+ ", JobID1=" + JobID1 + ", JobID2=" + JobID2 + ", JobDetails="
+				+ JobDetails + "]";
+	}
 	public String getJobTitle() {
 		return JobTitle;
 	}

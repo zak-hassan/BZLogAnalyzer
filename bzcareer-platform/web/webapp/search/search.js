@@ -25,7 +25,9 @@
         };
         $scope.fetchResults = function (num) {
             num = num || 1;
-            datacontext.getJob($scope.role, $scope.local, num, addToJobList, $scope.sidebars);
+            var role=$scope.role;
+            var local=$scope.local;
+            datacontext.getJob(role, local, num, addToJobList, $scope.sidebars);
         };
 
         $scope.map = {center: {latitude: 43, longitude: -79}, zoom: 8};

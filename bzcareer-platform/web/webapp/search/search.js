@@ -6,7 +6,21 @@
             companies: [],
             jobtypes: []
         };
+        
         $scope.pbar = "60";
+        $scope.joblist = [];
+        var addToJobList = function (u, t, p, l, s) {
+        	console.log("AddedToJobList: "+u+" , "+t+" , "+p+" , "+l+" , "+s);
+        	
+            $scope.joblist.push({
+                url: u,
+                title: t,
+                postedon: p,
+                locations: l,
+                summary: s
+            });
+        };
+        
         $scope.next = function () {
             PaginQueue.pagin_next();
         }
@@ -45,16 +59,7 @@
             longitude: -79.3957828,
             title: "Red Hat"
         }];
-        $scope.joblist = [];
-        var addToJobList = function (u, t, p, l, s) {
-            $scope.joblist.push({
-                url: u,
-                title: t,
-                postedon: p,
-                locations: l,
-                summary: s
-            });
-        };
+        
         var addToSidebar = function (cu, cn, cc, jtu, jtn, jtc) {
             $scope.sidebars.push({
                 compurl: cu,

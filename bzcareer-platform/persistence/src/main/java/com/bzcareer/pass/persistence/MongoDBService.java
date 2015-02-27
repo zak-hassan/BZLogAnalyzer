@@ -13,8 +13,23 @@ public class MongoDBService {
 
 	public List<SearchResults> query(String keyword, String local, int num) {
 		// TODO: Get search results from MongoDB remotely and query the jobs
-		// your looking for.
+		if (isValid(keyword) && isRealLocation(local)) {
+
+		}
 		return new ArrayList<SearchResults>();
+	}
+
+	private boolean isRealLocation(String local) {
+		// TODO Check database to confirm that the location exists in Canada.
+		// They may use a city or a province.
+		// Check for null
+		return true;
+	}
+
+	private boolean isValid(String keyword) {
+		// TODO Make sure the the keyword is not undefined or null
+		// TODO Check for null
+		return true;
 	}
 
 	public List<SearchResults> queryByCompany(String company, String role,
@@ -23,8 +38,8 @@ public class MongoDBService {
 	}
 
 	public List<String> queryAutocomplete(String starts_with, String country) {
-		 
-		MongoCollection<Document> cities=null;
+
+		MongoCollection<Document> cities = null;
 		// TODO: Need to pull keywords from CAUrlDB.newCanadaMap.find({city:''})
 		if (country.equalsIgnoreCase("Canada")) {
 			cities = Driver.connect("CAUrlDB", "newCanadaMap");

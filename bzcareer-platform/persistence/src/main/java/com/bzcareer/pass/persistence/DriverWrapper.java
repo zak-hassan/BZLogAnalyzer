@@ -14,7 +14,7 @@ public class DriverWrapper {
 
 	public static void addUnique(Map<String, Integer> totalCompanies, String val) {
 		if (!totalCompanies.containsKey(val)) {
-			totalCompanies.put(val, 0);
+			totalCompanies.put(val, 1);
 		} else {
 			totalCompanies.put(val, totalCompanies.get(val) + 1);
 		}
@@ -25,8 +25,8 @@ public class DriverWrapper {
 		MongoCollection<Document> collection = connect("ResultsIndexCanada",
 				"FinishedJobsIndexed");
 		int count = 0;
-		Map<String,Integer> side= new HashMap<String, Integer>();
-		
+		Map<String, Integer> side = new HashMap<String, Integer>();
+
 		for (Document document : collection.find()) {
 			System.out.println("Contains Company Name: " + document.keySet());
 			addUnique(side, document.get("CompanyName").toString());
@@ -37,8 +37,17 @@ public class DriverWrapper {
 			if (document.keySet().contains("JobDate")) {
 				job.setJobDate(document.get("JobDate").toString());
 			}
+			if (document.keySet().contains("JobDetails")) {
+				String jdescribe = document.get("JobDetails").toString();
+				if (jdescribe.length() < 120) {
+					job.setJobDetails(document.get("JobDetails").toString());
+				} else {
+					job.setJobDetails(document.get("JobDetails").toString()
+							.substring(0, 120)
+							+ "...");
+				}
+			}
 			if (document.keySet().contains("JobDetailURL")) {
-				// job.setJobDetails(document.get("JobDetails").toString());
 				job.setJobDetailURL(document.get("JobDetailURL").toString());
 			}
 			if (document.keySet().contains("JobID1")) {
@@ -63,13 +72,12 @@ public class DriverWrapper {
 		System.out.println(" Started : " + (start));
 		System.out.println(" Ended : " + (end));
 		System.out.println(" Total Jobs: " + count);
-		System.out.println(" Total Sidebar: " +side);
-		System.out.println(" Total Companies: " +side.size());
-		
-		
+		System.out.println(" Total Sidebar: " + side);
+		System.out.println(" Total Companies: " + side.size());
+
 	}
 
-	static MongoCollection<Document> connect(String db, String collection) {
+	public static MongoCollection<Document> connect(String db, String collection) {
 		MongoClient mongoClient = new MongoClient("bzcareer.com", 27017);
 		MongoDatabase database = mongoClient.getDatabase(db);
 		MongoCollection<Document> col = database.getCollection(collection);

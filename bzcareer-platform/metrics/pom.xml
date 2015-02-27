@@ -7,13 +7,20 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>metrics</artifactId>
+	<name>BZCareer :: Platform :: Metrics</name>
+	<url>Metrics for BZCareer.com</url>
 	<dependencies>
 		<dependency>
 			<groupId>com.maxmind.geoip</groupId>
 			<artifactId>geoip-api</artifactId>
 			<version>1.2.11</version>
 		</dependency>
+		<dependency>
+			<groupId>com.bzcareer.paas</groupId>
+			<artifactId>persistence</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 	</dependencies>
-	<name>BZCareer :: Platform :: Metrics</name>
-	<url>Metrics for BZCareer.com</url>
+
 </project>

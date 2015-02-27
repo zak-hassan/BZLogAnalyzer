@@ -16,7 +16,7 @@ public class MongoDBService {
 		if (isValid(keyword) && isRealLocation(local)) {
 
 			
-			MongoCollection<Document> 	collection = Driver.connect("CAUrlDB", "newCanadaMap");
+			MongoCollection<Document> 	collection = DriverWrapper.connect("CAUrlDB", "newCanadaMap");
 		}
 		return new ArrayList<SearchResults>();
 	}
@@ -55,9 +55,9 @@ public class MongoDBService {
 		MongoCollection<Document> cities = null;
 		// TODO: Need to pull keywords from CAUrlDB.newCanadaMap.find({city:''})
 		if (country.equalsIgnoreCase("Canada")) {
-			cities = Driver.connect("CAUrlDB", "newCanadaMap");
+			cities = DriverWrapper.connect("CAUrlDB", "newCanadaMap");
 		} else if (country.equalsIgnoreCase("US")) {
-			cities = Driver.connect("USAUrlDB", "newUSAMap");
+			cities = DriverWrapper.connect("USAUrlDB", "newUSAMap");
 		}
 		BasicDBObject q = new BasicDBObject();
 		q.put("City", Pattern.compile(starts_with));

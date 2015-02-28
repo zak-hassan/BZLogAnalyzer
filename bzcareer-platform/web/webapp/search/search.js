@@ -8,7 +8,8 @@
                 totalJobs : 0,
                 totalPages : 0,
                 jsummary : "",
-                pagenum : 0
+                pagenum : 0,
+                results: false
         };
 
 

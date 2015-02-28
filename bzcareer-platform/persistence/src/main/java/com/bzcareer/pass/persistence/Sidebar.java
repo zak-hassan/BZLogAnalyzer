@@ -3,6 +3,18 @@ package com.bzcareer.pass.persistence;
 import java.util.Map;
 
 public class Sidebar {
-	Map<String, Integer> Companies;
-	Map<String, Integer> JobType;
+	private Map<String, Integer> Companies;
+	private Map<String, Integer> JobType;
+	public Map<String, Integer> getCompanies() {
+		return Companies;
+	}
+	public void setCompanies(Map<String, Integer> companies) {
+		Companies = companies;
+	}
+	public Map<String, Integer> getJobType() {
+		return JobType;
+	}
+	public void setJobType(Map<String, Integer> jobType) {
+		JobType = jobType;
+	}
 }

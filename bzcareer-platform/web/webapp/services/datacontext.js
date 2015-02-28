@@ -19,6 +19,9 @@
                     sidebars.totalPages = data.TotalPages;
                     sidebars.jsummary = "Found " + data.TotalJobs + " positions with keyword " + role + " located in " + local;
                     sidebars.pagenum = pagenum;
+                    if(sidebars.totalJobs>0){
+                        sidebars.results=true;
+                    }
                     angular.forEach(data, function (v, k) {
                         if (isNaN(k) != true) {
                             addToJobList(v["JobDetailURL"], v["CompanyName"], v["JobDate"],

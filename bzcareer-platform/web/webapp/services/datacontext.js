@@ -17,7 +17,7 @@
                     var data = response.data;
                     sidebars.totalJobs = data.TotalJobs;
                     sidebars.totalPages = data.TotalPages;
-                    sidebars.jsummary = "Found " + data.TotalJobs + " of jobs for " + role + " in " + local;
+                    sidebars.jsummary = "Found " + data.TotalJobs + " positions with keyword " + role + " located in " + local;
                     sidebars.pagenum = pagenum;
                     angular.forEach(data, function (v, k) {
                         if (isNaN(k) != true) {

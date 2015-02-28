@@ -7,7 +7,7 @@
             console.log("req: " + JSON.stringify(request));
             console.log("re: " + JSON.stringify(response));
           $.ajax({
-            url: "/keywordAutocomplete.php",
+            url: "http://bzcareer.com/keywordAutocomplete.php",
             dataType: "jsonp",
             data: {
                 name_startsWith: request.term
@@ -44,7 +44,7 @@
             console.log("req: " + JSON.stringify(request));
             console.log("re: " + JSON.stringify(response));
           $.ajax({
-            url: "/cityAutocompletion.php",
+            url: "http://bzcareer.com/cityAutocompletion.php",
             dataType: "jsonp",
             data: {
                 featureClass: "P",

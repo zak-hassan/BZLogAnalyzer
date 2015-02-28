@@ -32,6 +32,21 @@
 
     </div>
 </div>
+<script>
+    $("#location").on('keypress', function (e) {
+        if (e.which == 13) {
+            $("#searchbtn").trigger("click");
+        }
+    });
+
+    $("#role").on('keypress', function (e) {
+        if (e.which == 13) {
+            $("#searchbtn").trigger("click");
+        }
+    });
+
+</script>
+
 <script defer="defer" type="text/javascript">
     window.onload = function () {
         var mycode;
@@ -41,17 +56,6 @@
         document.getElementsByTagName("head")[0].appendChild(DeferScript("/js/moment.min.js"));
         document.getElementsByTagName("head")[0].appendChild(DeferScript("/js/beoro_common.js"));
 
-        $("#location").on('keypress', function (e) {
-            if (e.which == 13) {
-                fetchSearch();
-            }
-        });
-
-        $("#role").on('keypress', function (e) {
-            if (e.which == 13) {
-                fetchSearch();
-            }
-        });
 
         resizeByScreen();
 

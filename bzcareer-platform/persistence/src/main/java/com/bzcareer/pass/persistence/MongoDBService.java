@@ -16,39 +16,47 @@ import com.mongodb.client.MongoCollection;
 public class MongoDBService {
 
 	public SearchResults query(String keyword, String local, int num) {
-		// TODO: Get search results from MongoDB remotely and query the jobs
-		 SearchResults results=new SearchResults();
-		if (isValid(keyword) && isRealLocation(local)) { 
-			Date start = new Date(System.currentTimeMillis());
-			MongoCollection<Document> collection = DriverWrapper.connect(
-					"ResultsIndexCanada", "FinishedJobsIndexed");
-			int count = 0;
-			Map<String, Integer> sideCompany = new HashMap<String, Integer>();
-			Map<String, Integer> sideJType = new HashMap<String, Integer>();
-			collection.count();
-			FindIterable<Document> found = collection.find();
-			for (Document document : found) {
- 				DriverWrapper.addUnique(sideCompany, document.get("CompanyName")
-						.toString());
- 				DriverWrapper.addUnique(sideJType, document.get("JobType")
-						.toString());
- 				
-				Job job = initJob(document);
-				// TODO: do threading logic to make this run faster then 15-30 seconds.
-				 results.addJob(job);
-			}
- 			Date end = new Date();
-		 	Sidebar sidebar = new Sidebar();
-			sidebar.setCompanies(sideCompany);;
+		SearchResults results = new SearchResults();
+		int count = 0;
+		MongoCollection<Document> collection = DriverWrapper.connect(
+				"ResultsIndexCanada", "FinishedJobsIndexed");
+		Map<String, Integer> sideCompany = new HashMap<String, Integer>();
+		Map<String, Integer> sideJType = new HashMap<String, Integer>();
+		if (isValid(keyword) && isRealLocation(local)) {
+ 				for (Document document : collection.find()) {
+					DriverWrapper.addUnique(sideCompany, document
+							.get("CompanyName").toString());
+					DriverWrapper.addUnique(sideJType, document.get("JobType")
+							.toString());
+					Job job = initJob(document);
+					// TODO: do threading logic to make this run faster then 15-30
+					// seconds.
+					results.addJob(job);
+					count++;
+				}
+			Sidebar sidebar = new Sidebar();
+			sidebar.setCompanies(sideCompany);
 			sidebar.setJobType(sideJType);
 			results.setSideBar(sidebar);
+			results.setTotalJobs(count);
+			results.setTotalPages(pageCalculator(count));
 		}
 		return results;
 	}
 
+	private static int pageCalculator(int count) {
+		int pages;
+		if (count % 10 != 0) {
+			pages = (count / 10) + 1;
+		} else {
+			pages = count / 10;
+		}
+		return pages;
+	}
+
 	private Job initJob(Document document) {
-		Job job =new Job();
-		
+		Job job = new Job();
+
 		if (document.keySet().contains("CompanyName")) {
 			job.setCompanyName(document.get("CompanyName").toString());
 		}
@@ -97,19 +105,19 @@ public class MongoDBService {
 		return true;
 	}
 
-	public  SearchResults queryByCompany(String company, String role,
+	public SearchResults queryByCompany(String company, String role,
 			String location, int page) {
-		//TODO: When queries come in this is a result of 'company:*' in the query string keyword param.
+		// TODO: When queries come in this is a result of 'company:*' in the
+		// query string keyword param.
 		return new SearchResults();
 	}
 
-	public  SearchResults queryByJobType(String jobType, String role,
+	public SearchResults queryByJobType(String jobType, String role,
 			String location, int page) {
-		//TODO: When queries come in this is a result of 'company:*' in the query string keyword param.
-		return new  SearchResults();
+		// TODO: When queries come in this is a result of 'company:*' in the
+		// query string keyword param.
+		return new SearchResults();
 	}
-
- 
 
 	public List<String> queryAutocomplete(String starts_with, String country) {
 

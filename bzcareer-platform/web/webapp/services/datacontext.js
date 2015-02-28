@@ -12,10 +12,13 @@
         // TODO: Put all data requests ...
         return {
             getJob: function (role, local, pagenum, addToJobList, sidebars) {
-             
                 $http.get("/js/ajaxSearchjsonpCanada.json").then(function (response) {
                     $("#pbar").show();
                     var data = response.data;
+                    sidebars.totalJobs = data.TotalJobs;
+                    sidebars.totalPages = data.TotalPages;
+                    sidebars.jsummary = "Found " + data.TotalJobs + " of jobs for " + role + " in " + local;
+                    sidebars.pagenum = pagenum;
                     angular.forEach(data, function (v, k) {
                         if (isNaN(k) != true) {
                             addToJobList(v["JobDetailURL"], v["CompanyName"], v["JobDate"],
@@ -58,4 +61,3 @@
         };
     }]);
 }());
-

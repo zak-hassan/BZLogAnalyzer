@@ -3,10 +3,16 @@
     var SearchCtrl = function ($scope, PaginQueue, datacontext) {
         $scope.country = "Canada";
         $scope.sidebars = {
-            companies: [],
-            jobtypes: []
+                companies : [],
+                jobtypes : [],
+                totalJobs : 0,
+                totalPages : 0,
+                jsummary : "",
+                pagenum : 0
         };
-        
+
+
+
         $scope.pbar = "60";
         $scope.joblist = [];
         var addToJobList = function (u, t, p, l, s) {

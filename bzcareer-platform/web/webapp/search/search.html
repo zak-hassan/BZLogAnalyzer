@@ -15,53 +15,53 @@
             <div id="searchField" class="span11" style="margin: 20px;padding:10px">
                 <!-- Page Title End -->
 
-                    <div id="searchBox">
-                        <div>
-                            <div class="span5">
+                <div id="searchBox">
+                    <div>
+                        <div class="span5">
 
-                                <div class="row">
-                                    <label for="role">
-                                        What? <br/>
-                                        (job title or job keyword)
-                                    </label>
-                                </div>
-                                <div class="row">
-                                    <input name="role" onchange="myKeyword()" oninput="myKeyword()" style="width:80%"
-                                           ng-model="role"
-                                           id="role" type="text"
-                                           value="" class="text">
-                                </div>
+                            <div class="row">
+                                <label for="role">
+                                    What? <br/>
+                                    (job title or job keyword)
+                                </label>
                             </div>
-                            <div class="span5">
-                                <div class="ui-widget">
-                                    <label for="location" style="margin-left: 30px;">
-                                        <div class="row dropdown" style="margin-left:-31px">
-                                            Where in <span style="font-weight: 900;color: black;">{{country}}
+                            <div class="row">
+                                <input name="role" onchange="myKeyword()" oninput="myKeyword()" style="width:80%"
+                                       ng-model="role"
+                                       id="role" type="text"
+                                       value="" class="text">
+                            </div>
+                        </div>
+                        <div class="span5">
+                            <div class="ui-widget">
+                                <label for="location" style="margin-left: 30px;">
+                                    <div class="row dropdown" style="margin-left:-31px">
+                                        Where in <span style="font-weight: 900;color: black;">{{country}}
 
 </span>
-                                            <br/> (city, province, state or town)
+                                        <br/> (city, province, state or town)
 
-                                        </div>
-                                    </label>
-                                    <input name="local" style="width:80%" id="location" type="text"
-                                           onfocus="myAutoComplete('CA')" value="" oninput="myAutoComplete('US')"
-                                           class="text" ng-model="local">
-
-                                </div>
-                            </div>
-                            <div class="span2">
-                                <input type="hidden" name="page" value="1">
-
-                                <div class="submit_sect">
-                                    <div class="row">
-                                        <input style="width:120px;margin:45px 20px" type="submit" id="searchbtn"
-                                               class="btn btn-beoro-3 btn-large" value="Find Jobs"
-                                               data-loading-text="Searching..."  ng-click="fetchResults()">
                                     </div>
+                                </label>
+                                <input name="local" style="width:80%" id="location" type="text"
+                                       onfocus="myAutoComplete('CA')" value="" oninput="myAutoComplete('US')"
+                                       class="text" ng-model="local">
+
+                            </div>
+                        </div>
+                        <div class="span2">
+                            <input type="hidden" name="page" value="1">
+
+                            <div class="submit_sect">
+                                <div class="row">
+                                    <input style="width:120px;margin:45px 20px" type="submit" id="searchbtn"
+                                           class="btn btn-beoro-3 btn-large" value="Find Jobs"
+                                           data-loading-text="Searching..." ng-click="fetchResults()">
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
             </div>
         </div>
@@ -95,19 +95,24 @@
             <!-- end of page top container-->
             <!-- 960 Container -->
             <div id="bodyframe" class="row-fluid">
+
+
                 <div class="container" style="margin:0px 20px">
                     <!-- Sidebar Begins -->
 
                     <sidebar></sidebar>
-                    <!-- Sidebar Ends
-
-
-
-                     -->
+                    <!-- Sidebar Ends -->
 
                     <div id="wrapper" class="eleven columns">
 
-                        <div id="Searchsum"><h1 style="margin: 0px 100px;width: 800px;">{{ title }}</h1></div>
+                        <div id="Searchsum">
+                            <h1 style="margin: 0px 100px;width: 800px;">
+                                <ul class="inline">
+                                      <li><span class="label label-inverse"> Page {{ sidebars.pagenum }} of {{ sidebars.totalPages }} pages </span></li>
+                                      <li><h1 style="font-size: 20px;">  {{ sidebars.jsummary }} </h1></li>
+                                </ul>
+                            </h1>
+                        </div>
                         <!--PROGRESS BAR -->
                         <div id="pbar" class="progress progress-info progress-striped active" style="margin-left:200px">
                             <div class="bar" style="width: 0%"></div>

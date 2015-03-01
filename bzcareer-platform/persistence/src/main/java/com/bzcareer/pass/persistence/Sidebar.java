@@ -17,4 +17,9 @@ public class Sidebar {
 	public void setJobType(Map<String, Integer> jobType) {
 		JobType = jobType;
 	}
+	@Override
+	public String toString() {
+		return "Sidebar [Companies=" + Companies + ", JobType=" + JobType + "]";
+	}
+	
 }

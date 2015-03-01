@@ -49,4 +49,10 @@ public class SearchResults {
 		this.jobs = jobs;
 	}
 
+	@Override
+	public String toString() {
+		return "SearchResults [jobs=" + jobs + ", TotalJobs=" + TotalJobs
+				+ ", TotalPages=" + TotalPages + ", sideBar=" + sideBar + "]";
+	}
+
 }

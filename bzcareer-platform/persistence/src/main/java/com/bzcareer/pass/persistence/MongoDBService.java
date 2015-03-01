@@ -1,8 +1,8 @@
 package com.bzcareer.pass.persistence;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -18,23 +18,42 @@ public class MongoDBService {
 	public SearchResults query(String keyword, String local, int num) {
 		SearchResults results = new SearchResults();
 		int count = 0;
-	MongoCollection<Document> collection = DriverWrapper.connect(
+		LinkedList<Job> joblist=new LinkedList<Job>();
+		MongoCollection<Document> collection = DriverWrapper.connect(
 				"ResultsIndexCanada", "FinishedJobsIndexed");
 		Map<String, Integer> sideCompany = new HashMap<String, Integer>();
 		Map<String, Integer> sideJType = new HashMap<String, Integer>();
 		if (isValid(keyword) && isRealLocation(local)) {
- 				FindIterable<Document> find = collection.find();
-				for (Document document : find) {
-					DriverWrapper.addUnique(sideCompany, document
-							.get("CompanyName").toString());
-					DriverWrapper.addUnique(sideJType, document.get("JobType")
-							.toString());
-					Job job = initJob(document);
-					// TODO: do threading logic to make this run faster then 15-30
-					// seconds.
-					results.addJob(job);
-					count++;
-				}
+			BasicDBObject whereQuery = new BasicDBObject();
+			whereQuery.put("number", 5);
+			// find({"JobDetails":/Java/})
+			// find({"JobDetails":/Java/, "JobLocation": /British Columbia/i}
+			// )[0]
+			BasicDBObject q = new BasicDBObject();
+			q.put("JobDetails",
+					Pattern.compile(keyword, Pattern.CASE_INSENSITIVE));
+ 			q.put("JobLocation", Pattern.compile(local.toUpperCase()));
+			FindIterable<Document> found = collection.find(q);
+			for (Document document : found) {
+				DriverWrapper.addUnique(sideCompany, document
+						.get("CompanyName").toString());
+				DriverWrapper.addUnique(sideJType, document.get("JobType")
+						.toString());
+				Job job = initJob(document);
+				// TODO: do threading logic to make this run faster then 15-30
+				// seconds.
+				//	results.addJob(job);
+				joblist.add(job);
+				count++;
+			}
+			int c=0;
+			for (Job j : joblist.subList(0, 10)) {
+				c++;
+				System.out.println("Count:" +c);
+				System.out.println("Job: "+j);
+				results.addJob(j);
+			}
+			
 			Sidebar sidebar = new Sidebar();
 			sidebar.setCompanies(sideCompany);
 			sidebar.setJobType(sideJType);

@@ -1,15 +1,17 @@
-package com.bzcareer.pass.persistence;
+package com.bzcareer.paas.persistence;
 
+import java.net.UnknownHostException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.bson.Document;
+ 
 
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-
+ 
 public class DriverWrapper {
 
 	public static void addUnique(Map<String, Integer> totalCompanies, String val) {
@@ -20,14 +22,14 @@ public class DriverWrapper {
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws UnknownHostException {
 		Date start = new Date(System.currentTimeMillis());
-		MongoCollection<Document> collection = connect("ResultsIndexCanada",
+		DBCollection collection = DriverWrapper.connect("ResultsIndexCanada",
 				"FinishedJobsIndexed");
 		int count = 0;
 		Map<String, Integer> side = new HashMap<String, Integer>();
 
-		for (Document document : collection.find()) {
+		for (DBObject document : collection.find()) {
 			System.out.println("Contains Company Name: " + document.keySet());
 			addUnique(side, document.get("CompanyName").toString());
 			Job job = new Job();
@@ -77,10 +79,10 @@ public class DriverWrapper {
 
 	}
 
-	public static MongoCollection<Document> connect(String db, String collection) {
+	public static DBCollection connect(String db, String collection) throws UnknownHostException {
 		MongoClient mongoClient = new MongoClient("bzcareer.com", 27017);
-		MongoDatabase database = mongoClient.getDatabase(db);
-		MongoCollection<Document> col = database.getCollection(collection);
+		DB database = mongoClient.getDB(db);
+		 DBCollection col = database.getCollection(collection);
 		return col;
 	}
 }

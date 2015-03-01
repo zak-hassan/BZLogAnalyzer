@@ -1,6 +1,6 @@
 package com.bzcareer.paas.rest;
 
-import java.util.ArrayList;
+import java.net.UnknownHostException;
 import java.util.List;
 
 import javax.ws.rs.GET;
@@ -8,8 +8,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
-import com.bzcareer.pass.persistence.MongoDBService;
-import com.bzcareer.pass.persistence.SearchResults;
+import com.bzcareer.paas.persistence.MongoDBService;
+import com.bzcareer.paas.persistence.SearchResults;
  
 @Path("/api")
  public class JobService {
@@ -24,12 +24,17 @@ import com.bzcareer.pass.persistence.SearchResults;
 	public SearchResults getJobs( @QueryParam("role") String role, @QueryParam("location") String location, 
 			@QueryParam("page") int page, @QueryParam("company") String company) {
 		//TODO: Add logic for connecting to mongodb.
-		SearchResults list;
-		if(company.equalsIgnoreCase("all")){
-			 list=mservice.query(role, location, page);
-		} else {
-			list= mservice.queryByCompany(company,role,location, page);
+ 		SearchResults list=null;
+//		if(company.equalsIgnoreCase("all")){
+		try {
+			list= mservice.query(role, location, page);
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+//		} else {
+//			list= mservice.queryByCompany(company,role,location, page);
+//		}
        return list;
     }
 	
@@ -38,7 +43,13 @@ import com.bzcareer.pass.persistence.SearchResults;
 	@Produces("application/json")
 	public List<String> getKeywords(@QueryParam("start_with") String starts_with, @QueryParam("country") String country){
 		
-		return mservice.queryAutocomplete(starts_with, country);
+		try {
+			return mservice.queryAutocomplete(starts_with, country);
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 		
 		
 	}

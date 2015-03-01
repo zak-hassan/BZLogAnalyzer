@@ -1,6 +1,8 @@
-package com.bzcareer.pass.persistence;
+package com.bzcareer.paas.persistence;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class SearchResults {
@@ -16,7 +18,9 @@ public class SearchResults {
 	public void addJob(Job job) {
 		getJobs().add(job);
 	}
-
+	public void addAll(Collection<? extends Job> list){
+		getJobs().addAll(list);
+	}
 	public int getTotalJobs() {
 		return TotalJobs;
 	}

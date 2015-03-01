@@ -1,4 +1,4 @@
-package com.bzcareer.pass.persistence;
+package com.bzcareer.paas.persistence;
 
 import java.util.Map;
 

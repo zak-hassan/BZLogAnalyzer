@@ -1,26 +1,27 @@
-package com.bzcareer.pass.persistence;
+package com.bzcareer.paas.persistence;
 
+import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import org.bson.Document;
-
 import com.mongodb.BasicDBObject;
-import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoCollection;
+import com.mongodb.DBCollection;
+import com.mongodb.DBObject;
 
 public class MongoDBService {
 
-	public SearchResults query(String keyword, String local, int num) {
+	public SearchResults query(String keyword, String local, int num)
+			throws UnknownHostException {
 		SearchResults results = new SearchResults();
 		int count = 0;
-		LinkedList<Job> joblist=new LinkedList<Job>();
-		MongoCollection<Document> collection = DriverWrapper.connect(
-				"ResultsIndexCanada", "FinishedJobsIndexed");
+		LinkedList<Job> joblist = new LinkedList<Job>();
+		DBCollection collection = DriverWrapper.connect("ResultsIndexCanada",
+				"FinishedJobsIndexed");
 		Map<String, Integer> sideCompany = new HashMap<String, Integer>();
 		Map<String, Integer> sideJType = new HashMap<String, Integer>();
 		if (isValid(keyword) && isRealLocation(local)) {
@@ -32,9 +33,9 @@ public class MongoDBService {
 			BasicDBObject q = new BasicDBObject();
 			q.put("JobDetails",
 					Pattern.compile(keyword, Pattern.CASE_INSENSITIVE));
- 			q.put("JobLocation", Pattern.compile(local.toUpperCase()));
-			FindIterable<Document> found = collection.find(q);
-			for (Document document : found) {
+			q.put("JobLocation", Pattern.compile(local.toUpperCase()));
+
+			for (DBObject document : collection.find(q)) {
 				DriverWrapper.addUnique(sideCompany, document
 						.get("CompanyName").toString());
 				DriverWrapper.addUnique(sideJType, document.get("JobType")
@@ -42,18 +43,11 @@ public class MongoDBService {
 				Job job = initJob(document);
 				// TODO: do threading logic to make this run faster then 15-30
 				// seconds.
-				//	results.addJob(job);
+				// results.addJob(job);
 				joblist.add(job);
 				count++;
 			}
-			int c=0;
-			for (Job j : joblist.subList(0, 10)) {
-				c++;
-				System.out.println("Count:" +c);
-				System.out.println("Job: "+j);
-				results.addJob(j);
-			}
-			
+			results.addAll(getPageForJobList(num, joblist));
 			Sidebar sidebar = new Sidebar();
 			sidebar.setCompanies(sideCompany);
 			sidebar.setJobType(sideJType);
@@ -62,6 +56,14 @@ public class MongoDBService {
 			results.setTotalPages(pageCalculator(count));
 		}
 		return results;
+	}
+ 
+
+	private Collection<? extends Job> getPageForJobList(int num,
+			List<Job> joblist) {
+		int end = (int) Math.ceil(((double) num) / 10) * 10;
+		int start = end - 9;
+		return joblist.subList(start, end);
 	}
 
 	private static int pageCalculator(int count) {
@@ -74,7 +76,7 @@ public class MongoDBService {
 		return pages;
 	}
 
-	private Job initJob(Document document) {
+	private Job initJob(DBObject document) {
 		Job job = new Job();
 
 		if (document.keySet().contains("CompanyName")) {
@@ -139,9 +141,10 @@ public class MongoDBService {
 		return new SearchResults();
 	}
 
-	public List<String> queryAutocomplete(String starts_with, String country) {
+	public List<String> queryAutocomplete(String starts_with, String country)
+			throws UnknownHostException {
 
-		MongoCollection<Document> cities = null;
+		DBCollection cities = null;
 		// TODO: Need to pull keywords from CAUrlDB.newCanadaMap.find({city:''})
 		if (country.equalsIgnoreCase("Canada")) {
 			cities = DriverWrapper.connect("CAUrlDB", "newCanadaMap");

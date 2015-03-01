@@ -6,8 +6,8 @@ import java.util.Map;
 
 import org.bson.Document;
 
-import com.bzcareer.pass.persistence.DriverWrapper;
-import com.bzcareer.pass.persistence.Job;
+import com.bzcareer.paas.persistence.DriverWrapper;
+import com.bzcareer.paas.persistence.Job;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 

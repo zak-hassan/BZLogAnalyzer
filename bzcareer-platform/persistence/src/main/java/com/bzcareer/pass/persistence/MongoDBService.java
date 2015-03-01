@@ -18,12 +18,13 @@ public class MongoDBService {
 	public SearchResults query(String keyword, String local, int num) {
 		SearchResults results = new SearchResults();
 		int count = 0;
-		MongoCollection<Document> collection = DriverWrapper.connect(
+	MongoCollection<Document> collection = DriverWrapper.connect(
 				"ResultsIndexCanada", "FinishedJobsIndexed");
 		Map<String, Integer> sideCompany = new HashMap<String, Integer>();
 		Map<String, Integer> sideJType = new HashMap<String, Integer>();
 		if (isValid(keyword) && isRealLocation(local)) {
- 				for (Document document : collection.find()) {
+ 				FindIterable<Document> find = collection.find();
+				for (Document document : find) {
 					DriverWrapper.addUnique(sideCompany, document
 							.get("CompanyName").toString());
 					DriverWrapper.addUnique(sideJType, document.get("JobType")

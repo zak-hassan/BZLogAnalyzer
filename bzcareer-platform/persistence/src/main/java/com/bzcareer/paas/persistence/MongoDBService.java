@@ -25,8 +25,6 @@ public class MongoDBService {
 		Map<String, Integer> sideCompany = new HashMap<String, Integer>();
 		Map<String, Integer> sideJType = new HashMap<String, Integer>();
 		if (isValid(keyword) && isRealLocation(local)) {
-			BasicDBObject whereQuery = new BasicDBObject();
-			whereQuery.put("number", 5);
 			// find({"JobDetails":/Java/})
 			// find({"JobDetails":/Java/, "JobLocation": /British Columbia/i}
 			// )[0]
@@ -57,13 +55,19 @@ public class MongoDBService {
 		}
 		return results;
 	}
- 
 
 	private Collection<? extends Job> getPageForJobList(int num,
 			List<Job> joblist) {
-		int end = (int) Math.ceil(((double) num) / 10) * 10;
-		int start = end - 9;
-		return joblist.subList(start, end);
+		int end = num * 10;
+		int start = end - 10;
+//		System.out.println("Num: " + num);
+//		System.out.println("Start: " + start + " End: " + end);
+		if (end > joblist.size()) {
+			return joblist.subList(start, joblist.size());
+		} else {
+			return joblist.subList(start, end);
+		}
+
 	}
 
 	private static int pageCalculator(int count) {

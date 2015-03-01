@@ -10,8 +10,10 @@ public class QueryKeywordTest {
 	@Test
 	public void queryTest() throws Exception {
 		MongoDBService service = new MongoDBService();
-		SearchResults results=service.query("Java", "BRITISH COLUMBIA", 1);
-		System.out.println(results);
-		System.out.println(results.getJobs().size());
+		SearchResults results=service.query("Analyst", "BRITISH COLUMBIA", 9);
+//		System.out.println(results);
+ 		System.out.println("Total Size Of JobList: "+ results.getJobs().size());
+ 		System.out.println("TotalJobs: "+results.getTotalJobs());
+ 		System.out.println("Pages: "+results.getTotalPages());
 	}
 }

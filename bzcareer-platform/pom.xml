@@ -20,7 +20,8 @@
   	<module>rest</module>
   	<module>persistence</module>
   	<module>web</module>
-  	<module>metrics</module>
+  	<!-- TODO: Fix bug in metrics and then uncomment -->
+  	<!-- <module>metrics</module> -->
   	
   </modules>
   

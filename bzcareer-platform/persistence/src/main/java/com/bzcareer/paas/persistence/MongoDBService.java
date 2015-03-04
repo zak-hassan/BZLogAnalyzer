@@ -25,9 +25,7 @@ public class MongoDBService {
 		Map<String, Integer> sideCompany = new HashMap<String, Integer>();
 		Map<String, Integer> sideJType = new HashMap<String, Integer>();
 		if (isValid(keyword) && isRealLocation(local)) {
-			// find({"JobDetails":/Java/})
-			// find({"JobDetails":/Java/, "JobLocation": /British Columbia/i}
-			// )[0]
+		 
 			BasicDBObject q = new BasicDBObject();
 			q.put("JobDetails",
 					Pattern.compile(keyword, Pattern.CASE_INSENSITIVE));
@@ -131,11 +129,42 @@ public class MongoDBService {
 		return true;
 	}
 
-	public SearchResults queryByCompany(String company, String role,
-			String location, int page) {
-		// TODO: When queries come in this is a result of 'company:*' in the
-		// query string keyword param.
-		return new SearchResults();
+	public SearchResults queryByCompany(String company, String keyword,
+			String local, int num) throws UnknownHostException {
+		SearchResults results = new SearchResults();
+		int count = 0;
+		LinkedList<Job> joblist = new LinkedList<Job>();
+		DBCollection collection = DriverWrapper.connect("ResultsIndexCanada",
+				"FinishedJobsIndexed");
+		Map<String, Integer> sideCompany = new HashMap<String, Integer>();
+		Map<String, Integer> sideJType = new HashMap<String, Integer>();
+		if (isValid(keyword) && isRealLocation(local)) {
+		 
+			BasicDBObject q = new BasicDBObject();
+			q.put("JobDetails",
+					Pattern.compile(keyword, Pattern.CASE_INSENSITIVE));
+			q.put("JobLocation", Pattern.compile(local.toUpperCase()));
+			q.put("CompanyName",Pattern.compile(company, Pattern.CASE_INSENSITIVE) );
+			
+			for (DBObject document : collection.find(q)) {
+				DriverWrapper.addUnique(sideCompany, document
+						.get("CompanyName").toString());
+				DriverWrapper.addUnique(sideJType, document.get("JobType")
+						.toString());
+				Job job = initJob(document);
+			 
+				joblist.add(job);
+				count++;
+			}
+			results.addAll(getPageForJobList(num, joblist));
+			Sidebar sidebar = new Sidebar();
+			sidebar.setCompanies(sideCompany);
+			sidebar.setJobType(sideJType);
+			results.setSideBar(sidebar);
+			results.setTotalJobs(count);
+			results.setTotalPages(pageCalculator(count));
+		}
+		return results;
 	}
 
 	public SearchResults queryByJobType(String jobType, String role,

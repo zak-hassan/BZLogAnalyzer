@@ -77,23 +77,21 @@
 			<version>${json.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- <dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
-			<scope>provided</scope>
-		</dependency> -->
-		<!-- <dependency>
-			<groupId>com.wordnik</groupId>
-			<artifactId>swagger-jaxrs_2.10</artifactId>
-			<version>1.3.0</version>
-			<optional>true</optional>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-api</artifactId> 
+			<version>${slf4j.version}</version> <scope>provided</scope> </dependency> -->
+		<!-- <dependency> <groupId>com.wordnik</groupId> <artifactId>swagger-jaxrs_2.10</artifactId> 
+			<version>1.3.0</version> <optional>true</optional> </dependency> -->
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
 			<version>2.7.15</version>
 		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>5.0.0</version>
+		</dependency>
+
 
 	</dependencies>
 	<build>
@@ -126,16 +124,16 @@
 						<Bundle-Description>${project.description}</Bundle-Description>
 						<Import-Package>
 							com.fasterxml.jackson.jaxrs.json;version="[2.3.1,3)",
- 							org.osgi.service.blueprint;version="[1.0.0,2.0.0)",
- 							com.bzcareer.paas.persistence,
+							org.osgi.service.blueprint;version="[1.0.0,2.0.0)",
+							com.bzcareer.paas.persistence,
 							javax.ws.rs,
-                            javax.ws.rs.core,
-                            javax.xml.bind.annotation,
-                             com.fasterxml.jackson.annotation;version="[2.3.0,3)", 
-                            com.fasterxml.jackson.core;version="[2.3.1,3)", 
-                            com.fasterxml.jackson.databind;version="[2.3.1,3)", 
-                             javax.ws.rs.ext,*
-                    	</Import-Package>
+							javax.ws.rs.core,
+							javax.xml.bind.annotation,
+							com.fasterxml.jackson.annotation;version="[2.3.0,3)",
+							com.fasterxml.jackson.core;version="[2.3.1,3)",
+							com.fasterxml.jackson.databind;version="[2.3.1,3)",
+							javax.ws.rs.ext,*
+						</Import-Package>
 						<Export-Package>
 							com.bzcareer.paas.rest
 						</Export-Package>
@@ -146,19 +144,9 @@
 
 
 			<!-- Putting folders in resources on the classpath -->
-			<!-- <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>filter</id>
-						<phase>generate-resources</phase>
-						<goals>
-							<goal>resources</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin> -->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-resources-plugin</artifactId> 
+				<executions> <execution> <id>filter</id> <phase>generate-resources</phase> 
+				<goals> <goal>resources</goal> </goals> </execution> </executions> </plugin> -->
 			<!-- For features -->
 			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>build-helper-maven-plugin</artifactId> 
 				<executions> <execution> <id>attach-artifacts</id> <phase>package</phase> 

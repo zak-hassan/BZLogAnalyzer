@@ -7,6 +7,8 @@
       http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/jaxrs.xsd
       http://cxf.apache.org/blueprint/core http://cxf.apache.org/schemas/blueprint/core.xsd">
 	
+	
+	
 	<jaxrs:server id="jobService" address="/jservice">
 		<jaxrs:serviceBeans>
 			<ref component-id="jobSvc" />
@@ -24,9 +26,11 @@
 	</cxf:bus>
 
 
-	<!-- We are using the OSGi Blueprint XML syntax to define a bean that we 
-		referred to in our JAX-RS server setup. This bean carries a set of JAX-RS 
-		annotations that allow its methods to be mapped to incoming requests. -->
-	<bean id="jobSvc" class="com.bzcareer.paas.rest.JobService" />
+	
+<bean id="jobSvc" class="com.bzcareer.paas.rest.JobService" />
 
+
+ <bean id="bundle-activator" class="com.bzcareer.paas.jmx.Activator" init-method="init" />
+ 
+ 
 </blueprint>

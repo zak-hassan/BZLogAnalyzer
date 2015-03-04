@@ -25,16 +25,16 @@ import com.bzcareer.paas.persistence.SearchResults;
 			@QueryParam("page") int page, @QueryParam("company") String company) {
 		//TODO: Add logic for connecting to mongodb.
  		SearchResults list=null;
-//		if(company.equalsIgnoreCase("all")){
+		if(company.equalsIgnoreCase("all")){
 		try {
 			list= mservice.query(role, location, page);
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-//		} else {
-//			list= mservice.queryByCompany(company,role,location, page);
-//		}
+		} else {
+			list= mservice.queryByCompany(company,role,location, page);
+		}
        return list;
     }
 	

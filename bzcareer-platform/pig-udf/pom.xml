@@ -1,11 +1,27 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.bzcareer.paas</groupId>
-    <artifactId>bzcareer-platform</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <artifactId>pig-udf</artifactId>
-  <name>BZCareer :: Pig UDF</name>
-  <description>BZCareer Pig Layer</description>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.bzcareer.paas</groupId>
+		<artifactId>bzcareer-platform</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>pig-udf</artifactId>
+	<name>BZCareer :: Pig UDF</name>
+	<description>BZCareer Pig Layer</description>
+	<properties>
+		<pig.version>0.13.0</pig.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.pig</groupId>
+			<artifactId>pig</artifactId>
+			<version>${pig.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.pig</groupId>
+			<artifactId>piggybank</artifactId>
+			<version>${pig.version}</version>
+		</dependency>
+	</dependencies>
 </project>

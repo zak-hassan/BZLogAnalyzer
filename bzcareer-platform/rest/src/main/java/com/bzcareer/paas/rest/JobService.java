@@ -36,7 +36,6 @@ public class JobService {
 				list = mservice.queryByCompany(company, role, location, page);
 			}
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return list;
@@ -52,7 +51,6 @@ public class JobService {
 		try {
 			return mservice.queryAutocomplete(starts_with, country);
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;

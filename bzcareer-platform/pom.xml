@@ -22,7 +22,8 @@
   	<module>web</module>
   	<!-- TODO: Fix bug in metrics and then uncomment -->
   	<!-- <module>metrics</module> -->
-  	
+
+  	<module>pig-udf</module>
   </modules>
   
 </project>

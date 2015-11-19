@@ -26,7 +26,7 @@ public class Main {
 		    public static void main(String[] args) {
 		        new Main();
 		        String topic = "kafkatopic";
-		        String msg = "I love you long time!!";
+		        String msg = "I I love you long time!love you!";
 		        KeyedMessage<Integer, String> data = new KeyedMessage<>(topic, msg);
 		        producer.send(data);
 		        producer.close();

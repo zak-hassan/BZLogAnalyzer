@@ -1,4 +1,4 @@
-
+package com.bzcareer.producer;
 import java.util.Properties;
 
 import kafka.javaapi.producer.Producer;
@@ -15,7 +15,11 @@ public class Main {
 		    public Main() {
 		        properties.put("metadata.broker.list", "localhost:9092");
 		        properties.put("serializer.class", "kafka.serializer.StringEncoder");
-		        properties.put("request.required.acks", "1");
+		        
+		        properties.put("request.required.acks", "1");// @see REQUIRED_ACK
+		        //	properties.put("compression.codec", "none");  
+		        //	possible values: none, gzip, and snappy.
+		        //properties.put("batch.num.messages","10"); // If you decide to batch your messages for async ops.
 		        producer = new Producer<>(new ProducerConfig(properties));
 		    }
 

@@ -12,13 +12,13 @@
         <id>bzcareerteam</id>
         <name>BZCareer Development Team</name>
         <organization>BZCareer</organization>
-        <organizationUrl>http://BZCareer.com/</organizationUrl>
+        <organizationUrl>http://www.bzcareer.com/</organizationUrl>
       </developer>
     </developers>
    
   <modules>
   	<module>rest</module>
-  	<module>persistence</module>
+  	<!--<module>persistence</module>-->
   	<module>web</module>
   	<!-- TODO: Fix bug in metrics and then uncomment -->
   	<!-- <module>metrics</module> -->

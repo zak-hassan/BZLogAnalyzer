@@ -1,11 +1,15 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.bzcareer.kafka.consumer</groupId>
-  <artifactId>kafka-consumer</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  
-  <dependencies>
- 		<dependency>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.bzcareer.paas</groupId>
+		<artifactId>bzcareer-platform</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>kafka-consumer</artifactId>
+
+	<dependencies>
+		<dependency>
 			<groupId>org.apache.kafka</groupId>
 			<artifactId>kafka_2.10</artifactId>
 			<version>0.8.2.1</version>
@@ -15,5 +19,5 @@
 			<artifactId>scala-library</artifactId>
 			<version>2.10.3</version>
 		</dependency>
-  </dependencies>
+	</dependencies>
 </project>

@@ -1,0 +1,4 @@
+[2015-11-25 20:34:39,650] INFO Rolled new log segment for 'kafkatopic-0' in 46 ms. (kafka.log.Log)
+[2015-11-25 20:34:39,652] INFO Scheduling log segment 0 for log kafkatopic-0 for deletion. (kafka.log.Log)
+[2015-11-25 20:35:39,653] INFO Deleting segment 0 from log kafkatopic-0. (kafka.log.Log)
+[2015-11-25 20:35:39,658] INFO Deleting index /tmp/kafka-logs/kafkatopic-0/00000000000000000000.index.deleted (kafka.log.OffsetIndex)

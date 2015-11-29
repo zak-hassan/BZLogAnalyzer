@@ -7,7 +7,9 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>kafka-consumer</artifactId>
-
+	<name>BZCareer :: Kafka :: Consumer</name>
+	<description>BZCareer Kafka Consumer</description>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.kafka</groupId>
